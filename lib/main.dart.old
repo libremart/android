@@ -1,0 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:system_core/core/bazaar_app.dart';
+
+void main() {
+  // final appRouter = AppRouter();
+  runApp(const BazaarApp());
+}
