@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:system_core/color_schemes.g.dart';
+import 'package:system_core/color_schemes.dart';
+import 'package:system_core/core/widgets/atoms/text/display_medium_atom.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,9 +36,7 @@ class Home extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
-            Text(
-              'Update with your UI',
-            ),
+            DisplayMedium(data: 'wow!'),
             Card(
               child: Text('hello there'),
             )
