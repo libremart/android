@@ -9,7 +9,7 @@ class HeadlineMedium extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Text(
-      'wow',
+      data,
       style: TextStyle(
         fontSize: theme.textTheme.headlineMedium!.fontSize,
         fontWeight: theme.textTheme.headlineMedium!.fontWeight,
