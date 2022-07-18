@@ -46,6 +46,8 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-# Project/Workspace packages related:
-.fvm
-.mason
+# Project packages related:
+.fvm/
+.mason/
+mason.yaml
+mason-lock.json

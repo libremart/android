@@ -14,9 +14,9 @@ import 'package:auto_route/auto_route.dart' as _i2;
 import 'package:flutter/material.dart' as _i6;
 
 import '../core/pipe/bazaar_app.dart' as _i1;
-import '../features/browse/widgets/pages/browse_page.dart' as _i4;
-import '../features/installed/widgets/pages/installed_page.dart' as _i5;
-import '../features/updates/widgets/pages/updates_page.dart' as _i3;
+import '../features/browse/widgets/pages/browse_page.dart' as _i3;
+import '../features/installed/widgets/pages/installed_page.dart' as _i4;
+import '../features/updates/widgets/pages/updates_page.dart' as _i5;
 
 class AppRouter extends _i2.RootStackRouter {
   AppRouter([_i6.GlobalKey<_i6.NavigatorState>? navigatorKey])
@@ -38,15 +38,19 @@ class AppRouter extends _i2.RootStackRouter {
     },
     UpdatesRouter.name: (routeData) {
       return _i2.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i3.UpdatesPage());
+          routeData: routeData, child: const _i2.EmptyRouterPage());
     },
     BrowseRoute.name: (routeData) {
       return _i2.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i4.BrowsePage());
+          routeData: routeData, child: const _i3.BrowsePage());
     },
     InstalledRoute.name: (routeData) {
       return _i2.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i5.InstalledPage());
+          routeData: routeData, child: const _i4.InstalledPage());
+    },
+    UpdatesRoute.name: (routeData) {
+      return _i2.MaterialPageX<dynamic>(
+          routeData: routeData, child: const _i5.UpdatesPage());
     }
   };
 
@@ -68,7 +72,12 @@ class AppRouter extends _i2.RootStackRouter {
                     path: '', parent: InstalledRouter.name)
               ]),
           _i2.RouteConfig(UpdatesRouter.name,
-              path: 'updated', parent: BazaarApp.name)
+              path: 'updates',
+              parent: BazaarApp.name,
+              children: [
+                _i2.RouteConfig(UpdatesRoute.name,
+                    path: '', parent: UpdatesRouter.name)
+              ])
         ])
       ];
 }
@@ -102,15 +111,16 @@ class InstalledRouter extends _i2.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i3.UpdatesPage]
+/// [_i2.EmptyRouterPage]
 class UpdatesRouter extends _i2.PageRouteInfo<void> {
-  const UpdatesRouter() : super(UpdatesRouter.name, path: 'updated');
+  const UpdatesRouter({List<_i2.PageRouteInfo>? children})
+      : super(UpdatesRouter.name, path: 'updates', initialChildren: children);
 
   static const String name = 'UpdatesRouter';
 }
 
 /// generated route for
-/// [_i4.BrowsePage]
+/// [_i3.BrowsePage]
 class BrowseRoute extends _i2.PageRouteInfo<void> {
   const BrowseRoute() : super(BrowseRoute.name, path: '');
 
@@ -118,9 +128,17 @@ class BrowseRoute extends _i2.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i5.InstalledPage]
+/// [_i4.InstalledPage]
 class InstalledRoute extends _i2.PageRouteInfo<void> {
   const InstalledRoute() : super(InstalledRoute.name, path: '');
 
   static const String name = 'InstalledRoute';
+}
+
+/// generated route for
+/// [_i5.UpdatesPage]
+class UpdatesRoute extends _i2.PageRouteInfo<void> {
+  const UpdatesRoute() : super(UpdatesRoute.name, path: '');
+
+  static const String name = 'UpdatesRoute';
 }
