@@ -1,53 +1,16 @@
+import 'package:bazaar/core/pipe/bazaar_core.dart';
+import 'package:bazaar/routes/router.gr.dart';
 import 'package:flutter/material.dart';
-import 'package:system_core/color_schemes.dart';
-import 'package:system_core/core/widgets/atoms/text/display_medium_atom.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
-  runApp(const MyApp());
-}
+  final appRouter = AppRouter();
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(useMaterial3: true, colorScheme: lightColorScheme),
-      darkTheme: ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
-      debugShowCheckedModeBanner: false,
-      home: const Home(),
-    );
-  }
-}
-
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 2,
-        title: const Text("Material Theme Builder"),
+  runApp(
+    ProviderScope(
+      child: BazaarCore(
+        appRouter: appRouter,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            DisplayMedium(data: 'wow!'),
-            Card(
-              child: Text('hello there'),
-            )
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => {},
-        tooltip: 'Increment',
-        label: const Text('yes yes yo'),
-      ),
-    );
-  }
+    ),
+  );
 }
