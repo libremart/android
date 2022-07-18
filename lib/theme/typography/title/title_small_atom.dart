@@ -15,6 +15,7 @@ class TitleSmall extends StatelessWidget {
         fontWeight: theme.textTheme.titleSmall!.fontWeight,
         letterSpacing: theme.textTheme.titleSmall!.letterSpacing,
         height: theme.textTheme.titleSmall!.height,
+        color: theme.textTheme.titleSmall!.color,
       ),
     );
   }

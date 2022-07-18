@@ -15,6 +15,7 @@ class TitleLarge extends StatelessWidget {
         fontWeight: theme.textTheme.titleLarge!.fontWeight,
         letterSpacing: theme.textTheme.titleLarge!.letterSpacing,
         height: theme.textTheme.titleLarge!.height,
+        color: theme.textTheme.titleLarge!.color,
       ),
     );
   }

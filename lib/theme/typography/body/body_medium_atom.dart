@@ -15,6 +15,7 @@ class BodyMedium extends StatelessWidget {
         fontWeight: theme.textTheme.bodyMedium!.fontWeight,
         letterSpacing: theme.textTheme.bodyMedium!.letterSpacing,
         height: theme.textTheme.bodyMedium!.height,
+        color: theme.textTheme.bodyMedium!.color,
       ),
     );
   }

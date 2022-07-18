@@ -15,6 +15,7 @@ class HeadlineMedium extends StatelessWidget {
         fontWeight: theme.textTheme.headlineMedium!.fontWeight,
         letterSpacing: theme.textTheme.headlineMedium!.letterSpacing,
         height: theme.textTheme.headlineMedium!.height,
+        color: theme.textTheme.bodyMedium!.color,
       ),
     );
   }

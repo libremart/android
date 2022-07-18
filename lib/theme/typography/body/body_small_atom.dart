@@ -15,6 +15,7 @@ class BodySmall extends StatelessWidget {
         fontWeight: theme.textTheme.bodySmall!.fontWeight,
         letterSpacing: theme.textTheme.bodySmall!.letterSpacing,
         height: theme.textTheme.bodySmall!.height,
+        color: theme.textTheme.bodySmall!.color,
       ),
     );
   }

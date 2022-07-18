@@ -15,6 +15,7 @@ class LabelMedium extends StatelessWidget {
         fontWeight: theme.textTheme.labelMedium!.fontWeight,
         letterSpacing: theme.textTheme.labelMedium!.letterSpacing,
         height: theme.textTheme.labelMedium!.height,
+        color: theme.textTheme.labelMedium!.color,
       ),
     );
   }

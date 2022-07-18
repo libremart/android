@@ -15,6 +15,7 @@ class HeadlineSmall extends StatelessWidget {
         fontWeight: theme.textTheme.headlineSmall!.fontWeight,
         letterSpacing: theme.textTheme.headlineSmall!.letterSpacing,
         height: theme.textTheme.headlineSmall!.height,
+        color: theme.textTheme.headlineSmall!.color,
       ),
     );
   }

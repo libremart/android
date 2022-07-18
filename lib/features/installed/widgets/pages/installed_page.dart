@@ -1,4 +1,4 @@
-import 'package:bazaar/theme/typography/display/display_large_atom.dart';
+import 'package:bazaar/theme/typography/display/display_medium_atom.dart';
 import 'package:flutter/material.dart';
 
 class InstalledPage extends StatelessWidget {
@@ -7,7 +7,8 @@ class InstalledPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: DisplayLarge(data: 'hello from Installed!'),
+      child: DisplayMedium(data: 'Installed Apps, N/A'),
     );
+    // TODO: replicate browse page here and put a filter to show installed apps only.
   }
 }

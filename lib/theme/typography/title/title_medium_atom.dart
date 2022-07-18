@@ -15,6 +15,7 @@ class TitleMedium extends StatelessWidget {
         fontWeight: theme.textTheme.titleMedium!.fontWeight,
         letterSpacing: theme.textTheme.titleMedium!.letterSpacing,
         height: theme.textTheme.titleMedium!.height,
+        color: theme.textTheme.titleMedium!.color,
       ),
     );
   }

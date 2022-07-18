@@ -15,6 +15,7 @@ class LabelSmall extends StatelessWidget {
         fontWeight: theme.textTheme.labelSmall!.fontWeight,
         letterSpacing: theme.textTheme.labelSmall!.letterSpacing,
         height: theme.textTheme.labelSmall!.height,
+        color: theme.textTheme.labelSmall!.color,
       ),
     );
   }

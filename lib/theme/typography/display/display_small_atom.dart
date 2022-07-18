@@ -15,6 +15,7 @@ class DisplaySmall extends StatelessWidget {
         fontWeight: theme.textTheme.displaySmall!.fontWeight,
         letterSpacing: theme.textTheme.displaySmall!.letterSpacing,
         height: theme.textTheme.displaySmall!.height,
+        color: theme.textTheme.displaySmall!.color,
       ),
     );
   }

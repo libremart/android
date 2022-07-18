@@ -15,6 +15,7 @@ class DisplayLarge extends StatelessWidget {
         fontWeight: theme.textTheme.displayLarge!.fontWeight,
         letterSpacing: theme.textTheme.displayLarge!.letterSpacing,
         height: theme.textTheme.displayLarge!.height,
+        color: theme.textTheme.displayLarge!.color,
       ),
     );
   }

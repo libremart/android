@@ -15,6 +15,7 @@ class LabelLarge extends StatelessWidget {
         fontWeight: theme.textTheme.labelLarge!.fontWeight,
         letterSpacing: theme.textTheme.labelLarge!.letterSpacing,
         height: theme.textTheme.labelLarge!.height,
+        color: theme.textTheme.labelLarge!.color,
       ),
     );
   }

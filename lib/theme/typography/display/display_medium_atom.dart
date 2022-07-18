@@ -15,6 +15,7 @@ class DisplayMedium extends StatelessWidget {
         fontWeight: theme.textTheme.displayMedium!.fontWeight,
         letterSpacing: theme.textTheme.displayMedium!.letterSpacing,
         height: theme.textTheme.displayMedium!.height,
+        color: theme.textTheme.displayMedium!.color,
       ),
     );
   }

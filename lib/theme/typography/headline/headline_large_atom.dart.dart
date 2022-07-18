@@ -15,6 +15,7 @@ class HeadlineLarge extends StatelessWidget {
         fontWeight: theme.textTheme.headlineLarge!.fontWeight,
         letterSpacing: theme.textTheme.headlineLarge!.letterSpacing,
         height: theme.textTheme.headlineLarge!.height,
+        color: theme.textTheme.headlineLarge!.color,
       ),
     );
   }

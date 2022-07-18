@@ -15,8 +15,8 @@ class BazaarCore extends StatelessWidget {
   Widget build(BuildContext context) {
     return ResponsiveSizer(builder: (context, orientation, deviceType) {
       return MaterialApp.router(
-        theme: BazaarTheme.theme(context, Brightness.light),
-        darkTheme: BazaarTheme.theme(context, Brightness.dark),
+        theme: BazaarTheme.light(),
+        darkTheme: BazaarTheme.dark(),
         themeMode: ThemeMode.system, //! implement override theme switcher
         debugShowCheckedModeBanner: false,
         routerDelegate: appRouter.delegate(),
