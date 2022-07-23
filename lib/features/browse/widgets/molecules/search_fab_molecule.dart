@@ -1,5 +1,5 @@
-import 'package:bazaar/theme/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:bazaar/theme/constants.dart';
 
 class SearchFABMolecule extends StatelessWidget {
   const SearchFABMolecule({
@@ -10,11 +10,11 @@ class SearchFABMolecule extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton.extended(
       onPressed: () {
-        // context.router.push(const NewPostRouter());
+        //
       },
       icon: const Icon(Icons.search),
       label: const Text(kStringsFABSearch),
-      tooltip: 'Search for an app',
+      tooltip: kStringsFABSearchTooltip,
     );
   }
 }

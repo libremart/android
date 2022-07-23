@@ -11,7 +11,8 @@ class BazaarApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
-      appBarBuilder: (_, tabsRouter) => const BazaarAppBarOrganism(),
+      appBarBuilder: (_, tabsRouter) =>
+          BazaarAppBarOrganism(tabsRouter: tabsRouter),
       routes: const [
         BrowseRouter(),
         InstalledRouter(),

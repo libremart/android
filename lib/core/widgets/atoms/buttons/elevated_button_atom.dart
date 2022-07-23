@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:bazaar/theme/typography/label/label_large_atom.dart';
 
 enum ButtonState { disabled, enabled, da }
 
@@ -39,8 +38,9 @@ class ElevatedButtonAtom extends StatelessWidget {
               : const SizedBox(
                   width: 20.0,
                 ),
-          LabelLarge(
-            data: text,
+          Text(
+            text,
+            style: theme.textTheme.labelLarge,
           ),
           buttonIcon == null
               ? const SizedBox.shrink()

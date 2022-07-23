@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:responsive_sizer/responsive_sizer.dart';
-import 'package:bazaar/theme/typography/label/label_large_atom.dart';
 
 enum ButtonState { disabled, enabled, da }
 
@@ -41,8 +40,9 @@ class TextButtonAtom extends StatelessWidget {
               : SizedBox(
                   width: 2.w,
                 ),
-          LabelLarge(
-            data: text,
+          Text(
+            text,
+            style: theme.textTheme.labelLarge,
           ),
           buttonIcon == null
               ? const SizedBox.shrink()

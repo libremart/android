@@ -11,15 +11,16 @@
 // ignore_for_file: type=lint
 
 import 'package:auto_route/auto_route.dart' as _i2;
-import 'package:flutter/material.dart' as _i6;
+import 'package:flutter/material.dart' as _i7;
 
 import '../core/pipe/bazaar_app.dart' as _i1;
+import '../features/browse/widgets/pages/app_page.dart' as _i4;
 import '../features/browse/widgets/pages/browse_page.dart' as _i3;
-import '../features/installed/widgets/pages/installed_page.dart' as _i4;
-import '../features/updates/widgets/pages/updates_page.dart' as _i5;
+import '../features/installed/widgets/pages/installed_page.dart' as _i5;
+import '../features/updates/widgets/pages/updates_page.dart' as _i6;
 
 class AppRouter extends _i2.RootStackRouter {
-  AppRouter([_i6.GlobalKey<_i6.NavigatorState>? navigatorKey])
+  AppRouter([_i7.GlobalKey<_i7.NavigatorState>? navigatorKey])
       : super(navigatorKey);
 
   @override
@@ -44,13 +45,17 @@ class AppRouter extends _i2.RootStackRouter {
       return _i2.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i3.BrowsePage());
     },
+    AppRoute.name: (routeData) {
+      return _i2.MaterialPageX<dynamic>(
+          routeData: routeData, child: const _i4.AppPage());
+    },
     InstalledRoute.name: (routeData) {
       return _i2.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i4.InstalledPage());
+          routeData: routeData, child: const _i5.InstalledPage());
     },
     UpdatesRoute.name: (routeData) {
       return _i2.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i5.UpdatesPage());
+          routeData: routeData, child: const _i6.UpdatesPage());
     }
   };
 
@@ -62,7 +67,9 @@ class AppRouter extends _i2.RootStackRouter {
               parent: BazaarApp.name,
               children: [
                 _i2.RouteConfig(BrowseRoute.name,
-                    path: '', parent: BrowseRouter.name)
+                    path: '', parent: BrowseRouter.name),
+                _i2.RouteConfig(AppRoute.name,
+                    path: ':appId', parent: BrowseRouter.name)
               ]),
           _i2.RouteConfig(InstalledRouter.name,
               path: 'installed',
@@ -128,7 +135,15 @@ class BrowseRoute extends _i2.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i4.InstalledPage]
+/// [_i4.AppPage]
+class AppRoute extends _i2.PageRouteInfo<void> {
+  const AppRoute() : super(AppRoute.name, path: ':appId');
+
+  static const String name = 'AppRoute';
+}
+
+/// generated route for
+/// [_i5.InstalledPage]
 class InstalledRoute extends _i2.PageRouteInfo<void> {
   const InstalledRoute() : super(InstalledRoute.name, path: '');
 
@@ -136,7 +151,7 @@ class InstalledRoute extends _i2.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i5.UpdatesPage]
+/// [_i6.UpdatesPage]
 class UpdatesRoute extends _i2.PageRouteInfo<void> {
   const UpdatesRoute() : super(UpdatesRoute.name, path: '');
 

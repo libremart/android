@@ -14,24 +14,30 @@ class BottomNavigationBarOrganism extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     var bottomNavigationIndex =
         ref.watch(bottomNavigationChangeNotifier).selectedIndex;
-    return NavigationBar(
-      height: 70,
-      selectedIndex: tabsRouter.activeIndex,
-      onDestinationSelected: tabsRouter.setActiveIndex,
-      destinations: const [
-        NavigationDestination(
-          icon: Icon(Icons.manage_search_rounded),
-          label: kStringsBottomNavBarBrowse,
-        ),
-        NavigationDestination(
-          icon: Icon(Icons.security_update_good),
-          label: kStringsBottomNavBarInstalled,
-        ),
-        NavigationDestination(
-          icon: Icon(Icons.system_update),
-          label: kStringsBottomNavBarUpdates,
-        ),
-      ],
+    return NavigationBarTheme(
+      data: const NavigationBarThemeData(),
+      child: NavigationBar(
+        labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
+        selectedIndex: tabsRouter.activeIndex,
+        onDestinationSelected: tabsRouter.setActiveIndex,
+        destinations: const [
+          NavigationDestination(
+            icon: Icon(Icons.manage_search_outlined),
+            selectedIcon: Icon(Icons.manage_search_rounded),
+            label: kStringsNavigationBrowse,
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.security_update_good_outlined),
+            selectedIcon: Icon(Icons.security_update_good),
+            label: kStringsNavigationInstalled,
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.system_update_outlined),
+            selectedIcon: Icon(Icons.system_update),
+            label: kStringsNavigationUpdates,
+          ),
+        ],
+      ),
     );
   }
 }

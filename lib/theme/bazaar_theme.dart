@@ -13,8 +13,9 @@ class BazaarTheme {
 
   static ThemeData dark() {
     return ThemeData(
-        useMaterial3: true,
-        colorScheme: darkColorScheme,
-        textTheme: GoogleFonts.ubuntuTextTheme(ThemeData.dark().textTheme));
+      useMaterial3: true,
+      colorScheme: darkColorScheme,
+      textTheme: GoogleFonts.ubuntuTextTheme(ThemeData.dark().textTheme),
+    );
   }
 }
