@@ -1,6 +1,9 @@
 // part 'installed_model.freezed.dart';
 // part 'installed_model.g.dart';
 
+// Test
+
+
 // @freezed
 // class Installed with _$Installed {
 //   const Installed._();
