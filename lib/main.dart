@@ -7,19 +7,20 @@ import 'package:dio/dio.dart';
 void main() {
   final appRouter = AppRouter();
 
-  runApp(const ProviderScope(
-    child: RSSDemo(),
-
-    // BazaarCore(
-    //   appRouter: appRouter,
-    // ),
-  ));
+  runApp(
+    const ProviderScope(
+      // child: BazaarCore(
+      //   appRouter: appRouter,
+      child: RSSDemo(),
+    ),
+  );
 }
+// RSSDemo(),
 
 final dioProvider = Provider<Dio>((ref) {
   return Dio(BaseOptions(
-    // baseUrl: 'https://www.github.com/',
-    baseUrl: 'https://www.github.com/ashinch/ReadYou/releases.atom',
+    baseUrl: 'https://www.github.com/',
+    // baseUrl: 'https://www.github.com/ashinch/ReadYou/releases.atom',
     // repo owner + / reponame .atom at the end
   ));
 });

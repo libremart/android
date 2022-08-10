@@ -1,34 +1,35 @@
-// import 'package:bazaar/features/browse/browse_model/app_entity_model.dart';
+// import 'package:bazaar/features/browse/releases/app_release_entity.dart';
 // import 'package:bazaar/main.dart';
 // import 'package:dio/dio.dart';
 // import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-
 // final browseRepositoryProvider = Provider<BrowseRepository>((ref) {
 //   final dio = ref.watch(dioProvider);
-//   return BazaarBrowseRepository(dio: dio);
+//   return GitHubBrowseRepository(dio: dio);
 // });
 
 // abstract class BrowseRepository {
-// Future<List<AppEntity>> getRssFeed();
+//   Future<List<AppReleaseEntity>> getRssFeed();
 // // Future<List<AppEntity>> getApps();
 //   // Future<List<MovieEntity>> getRecommendedMovies(double rating, String date, String genreIds);
 // }
 
-// class BazaarBrowseRepository implements BrowseRepository {
-//   BazaarBrowseRepository({required this.dio});
+// class GitHubBrowseRepository implements BrowseRepository {
+//   GitHubBrowseRepository({required this.dio});
 //   final Dio dio;
-  
+
 //   @override
-//   Future<List<AppEntity>> getRssFeed() async {
+//   Future<List<AppReleaseEntity>> getRssFeed() async {
+//     final response = await dio.get('ashinch/ReadYou/releases.atom',queryParameters: );
 
-// try{
-//   final response = await dio.get(
-//       );
-// }catch{
-
-// }
 //   }
-
-
 // }
+
+
+
+// // try{
+// //   final response = await dio.get(
+// //       );
+// // }catch{
+
+// // }
