@@ -1,26 +1,29 @@
-// import 'package:flutter/material.dart';
-// import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:bazaar/features/browse/browse_service.dart';
+import 'package:bazaar/features/browse/browse_state/browse_state.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-// final browseControllerProvider =
-//     StateNotifierProvider.autoDispose<BrowseController, BrowseState>(
-//         (ref) {
-//   return BrowseController(
-//     const BrowseState(
-      
-//     ),
-//     ref.watch,
-//   );
-// });
+final browseControllerProvider =
+    StateNotifierProvider.autoDispose<BrowseController, BrowseState>((ref) {
+  return BrowseController(
+    const BrowseState(appReleases: AsyncValue.data([])),
+    ref.watch(browseServiceProvider),
+  );
+});
 
-// class BrowseController extends StateNotifier<BrowseState> {
-//   BrowseController(
-//     BrowseState state,
-//     this._read,
-//   ) : super(state) {
-//   // todo: init first function
-//   }
+class BrowseController extends StateNotifier<BrowseState> {
+  BrowseController(
+    BrowseState state,
+    this._browseService,
+  ) : super(state) {
+    getAppReleases();
+  }
 
-//   final Reader _read;
+  final BrowseService _browseService;
 
-//   //todo: put your functions here
-// }
+  getAppReleases() async {
+    state = state.copyWith(appReleases: const AsyncValue.loading());
+    final rel = await _browseService.getAppReleases();
+    state = state.copyWith(appReleases: AsyncValue.data(rel));
+  }
+  //todo: put your functions here
+}

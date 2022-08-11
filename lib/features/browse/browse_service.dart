@@ -1,20 +1,32 @@
 //todo: not a must, but if you need, a service is a middleware between controller and repository
 
+import 'package:bazaar/features/browse/browse_model/app_release_model.dart';
+import 'package:bazaar/features/browse/browse_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final browseServiceProvider = Provider.autoDispose<BrowseService>((ref) {
-  return BazaarBrowseService(ref);
+final browseServiceProvider = Provider<BrowseService>((ref) {
+  final browseRepository = ref.watch(browseRepositoryProvider);
+  return GithubBrowseService(browseRepository);
 });
 
 abstract class BrowseService {
-  // todo: abstract functions
+  Future<List<AppRelease>> getAppReleases();
 }
 
-class BazaarBrowseService implements BrowseService {
-  BazaarBrowseService(
-    this.ref,
+class GithubBrowseService implements BrowseService {
+  GithubBrowseService(
+    this._browseRepository,
   );
-  final AutoDisposeRef ref;
+  final BrowseRepository _browseRepository;
+
+  @override
+  Future<List<AppRelease>> getAppReleases() async {
+    final appReleaseEntities = await _browseRepository.getReleasesRss(
+        repositoryPath: '/ashinch/ReadYou/');
+    final appReleases =
+        appReleaseEntities.map((e) => AppRelease.fromEntity(e)).toList();
+    return appReleases;
+  }
 
   // todo: implement abstract functions
 
