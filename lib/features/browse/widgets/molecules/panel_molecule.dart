@@ -1,4 +1,4 @@
-import 'package:bazaar/features/browse/widgets/atoms/panel_atom.dart';
+import 'package:libremart/features/browse/widgets/atoms/panel_atom.dart';
 import 'package:flutter/material.dart';
 import 'package:expandable/expandable.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';

@@ -1,5 +1,5 @@
-import 'package:bazaar/features/browse/releases/app_release_entity.dart';
-import 'package:bazaar/main.dart';
+import 'package:libremart/features/browse/releases/app_release_entity.dart';
+import 'package:libremart/main.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:webfeed_plus/webfeed_plus.dart';

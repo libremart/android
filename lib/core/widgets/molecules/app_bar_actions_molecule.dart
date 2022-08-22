@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:bazaar/theme/constants.dart';
+import 'package:libremart/theme/constants.dart';
 import 'package:flutter/material.dart';
 
 enum MenuValues {

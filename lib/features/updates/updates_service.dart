@@ -3,15 +3,15 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final updatesServiceProvider = Provider.autoDispose<UpdatesService>((ref) {
-  return BazaarUpdatesService(ref);
+  return LibreMartUpdatesService(ref);
 });
 
 abstract class UpdatesService {
   // todo: abstract functions
 }
 
-class BazaarUpdatesService implements UpdatesService {
-  BazaarUpdatesService(
+class LibreMartUpdatesService implements UpdatesService {
+  LibreMartUpdatesService(
     this.ref,
   );
   final AutoDisposeRef ref;

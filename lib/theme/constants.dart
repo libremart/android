@@ -1,4 +1,4 @@
-const String kAppTitle = 'Bazaar';
+const String kAppTitle = 'LibreMart';
 
 //* Sizes:
 const double kBorderRadiusCorners = 12;

@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:bazaar/core/widgets/atoms/app_bar_title_atom.dart';
-import 'package:bazaar/core/widgets/molecules/app_bar_actions_molecule.dart';
+import 'package:libremart/core/widgets/atoms/app_bar_title_atom.dart';
+import 'package:libremart/core/widgets/molecules/app_bar_actions_molecule.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class BazaarAppBarOrganism extends ConsumerStatefulWidget
+class LibreMartAppBarOrganism extends ConsumerStatefulWidget
     implements PreferredSizeWidget {
-  const BazaarAppBarOrganism({
+  const LibreMartAppBarOrganism({
     Key? key,
     required this.tabsRouter,
   }) : super(key: key);
@@ -18,10 +18,11 @@ class BazaarAppBarOrganism extends ConsumerStatefulWidget
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() =>
-      _BazaarAppBarOrganismState();
+      _LibreMartAppBarOrganismState();
 }
 
-class _BazaarAppBarOrganismState extends ConsumerState<BazaarAppBarOrganism> {
+class _LibreMartAppBarOrganismState
+    extends ConsumerState<LibreMartAppBarOrganism> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);

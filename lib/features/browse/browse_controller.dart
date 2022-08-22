@@ -1,5 +1,5 @@
-import 'package:bazaar/features/browse/browse_service.dart';
-import 'package:bazaar/features/browse/browse_state/browse_state.dart';
+import 'package:libremart/features/browse/browse_service.dart';
+import 'package:libremart/features/browse/browse_state/browse_state.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final browseControllerProvider =

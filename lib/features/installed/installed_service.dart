@@ -3,15 +3,15 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final installedServiceProvider = Provider.autoDispose<InstalledService>((ref) {
-  return BazaarInstalledService(ref);
+  return LibreMartInstalledService(ref);
 });
 
 abstract class InstalledService {
   // todo: abstract functions
 }
 
-class BazaarInstalledService implements InstalledService {
-  BazaarInstalledService(
+class LibreMartInstalledService implements InstalledService {
+  LibreMartInstalledService(
     this.ref,
   );
   final AutoDisposeRef ref;

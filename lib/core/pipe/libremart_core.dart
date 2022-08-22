@@ -1,12 +1,12 @@
-import 'package:bazaar/theme/color_schemes.dart';
+import 'package:libremart/theme/color_schemes.dart';
 import 'package:dynamic_color/dynamic_color.dart';
-import 'package:bazaar/routes/router.gr.dart';
+import 'package:libremart/routes/router.gr.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-import 'package:bazaar/theme/bazaar_theme.dart';
+import 'package:libremart/theme/libremart_theme.dart';
 
-class BazaarCore extends StatelessWidget {
-  const BazaarCore({
+class LibremartCore extends StatelessWidget {
+  const LibremartCore({
     Key? key,
     required this.appRouter,
   }) : super(key: key);
@@ -36,8 +36,8 @@ class BazaarCore extends StatelessWidget {
                 useMaterial3: true,
                 colorScheme: lightColorSchemeA,
               ),
-              //  BazaarTheme.light(),
-              darkTheme: BazaarTheme.dark(),
+              //  LibremartTheme.light(),
+              darkTheme: LibreMartTheme.dark(),
               themeMode: ThemeMode.system, //! implement override theme switcher
               debugShowCheckedModeBanner: false,
               routerDelegate: appRouter.delegate(),

@@ -1,4 +1,4 @@
-import 'package:bazaar/features/browse/releases/app_release_entity.dart';
+import 'package:libremart/features/browse/releases/app_release_entity.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'app_release_model.freezed.dart';
 
@@ -16,22 +16,23 @@ class AppRelease with _$AppRelease {
     required String? published,
   }) = _AppRelease;
 
-  AppRelease.initial() {
-    id:
-    '';
-    updated:
-    DateTime.now();
-    links:
-    [];
-    title:
-    '';
-    content:
-    '';
-    authors:
-    [];
-    published:
-    '';
-  }
+  // AppRelease.initial() {
+  //   id:
+  //   '';
+  //   updated:
+  //   DateTime.now();
+  //   links:
+  //   [];
+  //   title:
+  //   '';
+  //   content:
+  //   '';
+  //   authors:
+  //   [];
+  //   published:
+  //   '';
+  // }
+
   factory AppRelease.fromEntity(AppReleaseEntity entity) {
     final List<String?> stringLinks = [];
     entity.links!.map((e) => stringLinks.add(e.href));

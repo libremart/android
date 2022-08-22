@@ -1,7 +1,7 @@
-import 'package:bazaar/features/browse/widgets/atoms/app_image_atom.dart';
-import 'package:bazaar/features/browse/widgets/atoms/vertical_divider_atom.dart';
-import 'package:bazaar/features/browse/widgets/molecules/app_detail_molecule.dart';
-import 'package:bazaar/theme/constants.dart';
+import 'package:libremart/features/browse/widgets/atoms/app_image_atom.dart';
+import 'package:libremart/features/browse/widgets/atoms/vertical_divider_atom.dart';
+import 'package:libremart/features/browse/widgets/molecules/app_detail_molecule.dart';
+import 'package:libremart/theme/constants.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:flutter/material.dart';
 

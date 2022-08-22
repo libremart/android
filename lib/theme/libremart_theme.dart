@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:bazaar/theme/color_schemes.dart';
+import 'package:libremart/theme/color_schemes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class BazaarTheme {
+class LibreMartTheme {
   static ThemeData light() {
     return ThemeData(
       useMaterial3: true,

@@ -1,4 +1,4 @@
-import 'package:bazaar/theme/typography/display/display_small_atom.dart';
+import 'package:libremart/theme/typography/display/display_small_atom.dart';
 import 'package:flutter/material.dart';
 
 class UpdatesPage extends StatelessWidget {

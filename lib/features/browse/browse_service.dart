@@ -1,7 +1,7 @@
 //todo: not a must, but if you need, a service is a middleware between controller and repository
 
-import 'package:bazaar/features/browse/browse_model/app_release_model.dart';
-import 'package:bazaar/features/browse/browse_repository.dart';
+import 'package:libremart/features/browse/browse_model/app_release_model.dart';
+import 'package:libremart/features/browse/browse_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final browseServiceProvider = Provider<BrowseService>((ref) {

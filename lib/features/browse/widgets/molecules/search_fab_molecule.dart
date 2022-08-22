@@ -1,6 +1,6 @@
-import 'package:bazaar/features/browse/browse_repository.dart';
+import 'package:libremart/features/browse/browse_repository.dart';
 import 'package:flutter/material.dart';
-import 'package:bazaar/theme/constants.dart';
+import 'package:libremart/theme/constants.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class SearchFABMolecule extends ConsumerWidget {

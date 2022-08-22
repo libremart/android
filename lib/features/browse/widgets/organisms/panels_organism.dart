@@ -1,5 +1,5 @@
-import 'package:bazaar/features/browse/browse_controller.dart';
-import 'package:bazaar/features/browse/widgets/molecules/panel_molecule.dart';
+import 'package:libremart/features/browse/browse_controller.dart';
+import 'package:libremart/features/browse/widgets/molecules/panel_molecule.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

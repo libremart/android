@@ -1,16 +1,16 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:bazaar/core/pipe/bazaar_app.dart';
-import 'package:bazaar/features/browse/widgets/pages/app_page.dart';
-import 'package:bazaar/features/browse/widgets/pages/browse_page.dart';
-import 'package:bazaar/features/installed/widgets/pages/installed_page.dart';
-import 'package:bazaar/features/updates/widgets/pages/updates_page.dart';
+import 'package:libremart/core/pipe/libremart_app.dart';
+import 'package:libremart/features/browse/widgets/pages/app_page.dart';
+import 'package:libremart/features/browse/widgets/pages/browse_page.dart';
+import 'package:libremart/features/installed/widgets/pages/installed_page.dart';
+import 'package:libremart/features/updates/widgets/pages/updates_page.dart';
 
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: [
     AutoRoute(
       path: '/',
-      page: BazaarApp,
+      page: LibreMartApp,
       children: [
         AutoRoute(
           path: 'browse',

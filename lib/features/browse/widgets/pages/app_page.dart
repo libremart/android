@@ -1,6 +1,6 @@
-import 'package:bazaar/features/browse/widgets/atoms/elevated_download_button_atom.dart';
-import 'package:bazaar/features/browse/widgets/organisms/app_container_organism.dart';
-import 'package:bazaar/features/browse/widgets/organisms/panels_organism.dart';
+import 'package:libremart/features/browse/widgets/atoms/elevated_download_button_atom.dart';
+import 'package:libremart/features/browse/widgets/organisms/app_container_organism.dart';
+import 'package:libremart/features/browse/widgets/organisms/panels_organism.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';

@@ -1,4 +1,4 @@
-import 'package:bazaar/features/browse/widgets/organisms/app_tile_organism.dart';
+import 'package:libremart/features/browse/widgets/organisms/app_tile_organism.dart';
 import 'package:flutter/material.dart';
 
 class BrowseListViewOrganism extends StatelessWidget {
