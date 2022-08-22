@@ -1,5 +1,5 @@
 <p align="center">
-<h1>Bazaar<h1/>
+<h1>LibreMart<h1/>
 </p>
 
 <p align="center">
