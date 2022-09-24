@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:libremart/features/api/api_repository.dart';
 
-class InstalledPage extends StatelessWidget {
+class InstalledPage extends ConsumerWidget {
   const InstalledPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Column(
       children: [
         const OutlinedButton(
-            onPressed: null, child: Text('Outlined but not active')),
+          onPressed: null,
+          child: Text('Outlined but not active'),
+        ),
         OutlinedButton(
-          onPressed: () {},
-          child: const Text('Outlined button'),
+          onPressed: ref.read(apiRepositoryProvider).getAllProducts,
+          child: const Text('Outlined button - TEST'),
         ),
         OutlinedButton.icon(
           icon: const Icon(Icons.person),

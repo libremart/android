@@ -7,20 +7,20 @@ import 'package:webfeed_plus/webfeed_plus.dart';
 const String githubBaseUrl = 'https://www.github.com';
 const String githubEndingUrl = 'releases.atom';
 
-final browseRepositoryProvider = Provider<BrowseRepository>((ref) {
+final scrapeRepositoryProvider = Provider<ScrapeRepository>((ref) {
   final client = ref.watch(httpClientProvider);
-  return GithubBrowseRepository(client: client);
+  return GithubScrapeRepository(client: client);
 });
 
-abstract class BrowseRepository {
+abstract class ScrapeRepository {
   Future<List<AppReleaseEntity>> getReleasesRss(
       {required String repositoryPath});
 // Future<List<AppEntity>> getApps();
   // Future<List<MovieEntity>> getRecommendedMovies(double rating, String date, String genreIds);
 }
 
-class GithubBrowseRepository implements BrowseRepository {
-  GithubBrowseRepository({required this.client});
+class GithubScrapeRepository implements ScrapeRepository {
+  GithubScrapeRepository({required this.client});
   final http.Client client;
 
   @override
