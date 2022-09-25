@@ -25,7 +25,6 @@ class LMApiRepository implements ApiRepository {
   final http.Client client;
 
   @override
-  // List<GithubItemModel>
   Future<List<GithubItemModel>>? getAllProducts() async {
     List<GithubItemModel>? productList;
     final response = await client.get(Uri.parse(libreMartApiUrl));
