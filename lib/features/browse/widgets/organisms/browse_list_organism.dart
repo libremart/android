@@ -12,18 +12,19 @@ class BrowseListViewOrganism extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return ref.watch(apiControllerProvider).allPackings!.when(
-          data: (packings) => ListView.builder(
-            itemCount: packings.length,
-            itemBuilder: (context, index) {
-              ref
-                  .read(apiControllerProvider.notifier)
-                  .selectIndexForPacking(selectedIndex: index);
-              return const AppTileOrganism();
-            },
-          ),
-          error: (e, s) => BrowseListError(e),
-          loading: () => const BrowseListLoader(),
-        );
+    return ref.watch(apiControllerProvider).allPackings?.when(
+              data: (packings) => ListView.builder(
+                itemCount: packings.length,
+                itemBuilder: (context, index) {
+                  ref
+                      .read(apiControllerProvider.notifier)
+                      .selectIndexForPacking(selectedIndex: index);
+                  return const AppTileOrganism();
+                },
+              ),
+              error: (e, s) => BrowseListError(e),
+              loading: () => const BrowseListLoader(),
+            ) ??
+        const Text('is Null');
   }
 }

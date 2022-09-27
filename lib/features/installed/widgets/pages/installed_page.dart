@@ -14,8 +14,9 @@ class InstalledPage extends ConsumerWidget {
           child: Text('Outlined but not active'),
         ),
         OutlinedButton(
-          // onPressed: ref.read(apiControllerProvider.notifier).getAllPackagings,
-          onPressed: ref.read(apiRepositoryProvider).fuckThisShit,
+          onPressed: ref
+              .read(apiRepositoryProvider)
+              .getAllProductsFromGithubApiDyanmic,
           child: const Text('Outlined button - TEST'),
         ),
         OutlinedButton.icon(

@@ -15,7 +15,7 @@ class ApiController extends StateNotifier<ApiState> {
     ApiState state,
     this.ref,
   ) : super(state) {
-    getAllPackagings();
+    // getAllPackagings();
   }
 
   final Ref ref;

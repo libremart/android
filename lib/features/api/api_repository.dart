@@ -16,8 +16,7 @@ final apiRepositoryProvider = Provider<ApiRepository>((ref) {
 
 abstract class ApiRepository {
   Future<List<GithubItem>>? getAllProductsFromGithubApi();
-  Future<List<dynamic>> getAllProductsFromGithubApiDyanmic();
-  Future<void> fuckThisShit();
+  Future<void> getAllProductsFromGithubApiDyanmic();
 // Future<List<AppEntity>> getApps();
   // Future<List<MovieEntity>> getRecommendedMovies(double rating, String date, String genreIds);
 }
@@ -42,13 +41,15 @@ class LMApiRepository implements ApiRepository {
   }
 
   @override
-  Future<List<dynamic>> getAllProductsFromGithubApiDyanmic() async {
+  Future<void> getAllProductsFromGithubApiDyanmic() async {
     final response = await client.get(Uri.parse(libreMartApiUrl));
     if (response.statusCode == 200) {
-      final productsJson = jsonDecode(response.body);
-      return productsJson
-          .map((product) => GithubItem.fromDocument(product))
-          .toList();
+      final Map<String, dynamic> productsJson = jsonDecode(response.body);
+
+      print('${productsJson.runtimeType}');
+      // productsJson.map((product) => GithubItem.fromJson(product)).toList();
+
+      throw UnimplementedError();
     } else {
       throw UnimplementedError();
     }
