@@ -6,8 +6,8 @@ part of 'github_item_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_GithubItemModel _$$_GithubItemModelFromJson(Map<String, dynamic> json) =>
-    _$_GithubItemModel(
+_$_GithubItem _$$_GithubItemFromJson(Map<String, dynamic> json) =>
+    _$_GithubItem(
       name: json['name'] as String?,
       path: json['path'] as String?,
       sha: json['sha'] as String?,
@@ -22,7 +22,7 @@ _$_GithubItemModel _$$_GithubItemModelFromJson(Map<String, dynamic> json) =>
           : Links.fromJson(json['links'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_GithubItemModelToJson(_$_GithubItemModel instance) =>
+Map<String, dynamic> _$$_GithubItemToJson(_$_GithubItem instance) =>
     <String, dynamic>{
       'name': instance.name,
       'path': instance.path,

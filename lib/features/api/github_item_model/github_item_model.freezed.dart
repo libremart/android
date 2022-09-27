@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-GithubItemModel _$GithubItemModelFromJson(Map<String, dynamic> json) {
-  return _GithubItemModel.fromJson(json);
+GithubItem _$GithubItemFromJson(Map<String, dynamic> json) {
+  return _GithubItem.fromJson(json);
 }
 
 /// @nodoc
-mixin _$GithubItemModel {
+mixin _$GithubItem {
   String? get name => throw _privateConstructorUsedError;
   String? get path => throw _privateConstructorUsedError;
   String? get sha => throw _privateConstructorUsedError;
@@ -33,15 +33,15 @@ mixin _$GithubItemModel {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GithubItemModelCopyWith<GithubItemModel> get copyWith =>
+  $GithubItemCopyWith<GithubItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GithubItemModelCopyWith<$Res> {
-  factory $GithubItemModelCopyWith(
-          GithubItemModel value, $Res Function(GithubItemModel) then) =
-      _$GithubItemModelCopyWithImpl<$Res>;
+abstract class $GithubItemCopyWith<$Res> {
+  factory $GithubItemCopyWith(
+          GithubItem value, $Res Function(GithubItem) then) =
+      _$GithubItemCopyWithImpl<$Res>;
   $Res call(
       {String? name,
       String? path,
@@ -58,13 +58,12 @@ abstract class $GithubItemModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$GithubItemModelCopyWithImpl<$Res>
-    implements $GithubItemModelCopyWith<$Res> {
-  _$GithubItemModelCopyWithImpl(this._value, this._then);
+class _$GithubItemCopyWithImpl<$Res> implements $GithubItemCopyWith<$Res> {
+  _$GithubItemCopyWithImpl(this._value, this._then);
 
-  final GithubItemModel _value;
+  final GithubItem _value;
   // ignore: unused_field
-  final $Res Function(GithubItemModel) _then;
+  final $Res Function(GithubItem) _then;
 
   @override
   $Res call({
@@ -136,11 +135,11 @@ class _$GithubItemModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$$_GithubItemModelCopyWith<$Res>
-    implements $GithubItemModelCopyWith<$Res> {
-  factory _$$_GithubItemModelCopyWith(
-          _$_GithubItemModel value, $Res Function(_$_GithubItemModel) then) =
-      __$$_GithubItemModelCopyWithImpl<$Res>;
+abstract class _$$_GithubItemCopyWith<$Res>
+    implements $GithubItemCopyWith<$Res> {
+  factory _$$_GithubItemCopyWith(
+          _$_GithubItem value, $Res Function(_$_GithubItem) then) =
+      __$$_GithubItemCopyWithImpl<$Res>;
   @override
   $Res call(
       {String? name,
@@ -159,15 +158,14 @@ abstract class _$$_GithubItemModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_GithubItemModelCopyWithImpl<$Res>
-    extends _$GithubItemModelCopyWithImpl<$Res>
-    implements _$$_GithubItemModelCopyWith<$Res> {
-  __$$_GithubItemModelCopyWithImpl(
-      _$_GithubItemModel _value, $Res Function(_$_GithubItemModel) _then)
-      : super(_value, (v) => _then(v as _$_GithubItemModel));
+class __$$_GithubItemCopyWithImpl<$Res> extends _$GithubItemCopyWithImpl<$Res>
+    implements _$$_GithubItemCopyWith<$Res> {
+  __$$_GithubItemCopyWithImpl(
+      _$_GithubItem _value, $Res Function(_$_GithubItem) _then)
+      : super(_value, (v) => _then(v as _$_GithubItem));
 
   @override
-  _$_GithubItemModel get _value => super._value as _$_GithubItemModel;
+  _$_GithubItem get _value => super._value as _$_GithubItem;
 
   @override
   $Res call({
@@ -182,7 +180,7 @@ class __$$_GithubItemModelCopyWithImpl<$Res>
     Object? type = freezed,
     Object? links = freezed,
   }) {
-    return _then(_$_GithubItemModel(
+    return _then(_$_GithubItem(
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -229,8 +227,8 @@ class __$$_GithubItemModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_GithubItemModel implements _GithubItemModel {
-  const _$_GithubItemModel(
+class _$_GithubItem implements _GithubItem {
+  const _$_GithubItem(
       {required this.name,
       required this.path,
       required this.sha,
@@ -242,8 +240,8 @@ class _$_GithubItemModel implements _GithubItemModel {
       required this.type,
       required this.links});
 
-  factory _$_GithubItemModel.fromJson(Map<String, dynamic> json) =>
-      _$$_GithubItemModelFromJson(json);
+  factory _$_GithubItem.fromJson(Map<String, dynamic> json) =>
+      _$$_GithubItemFromJson(json);
 
   @override
   final String? name;
@@ -268,14 +266,14 @@ class _$_GithubItemModel implements _GithubItemModel {
 
   @override
   String toString() {
-    return 'GithubItemModel(name: $name, path: $path, sha: $sha, size: $size, url: $url, htmlUrl: $htmlUrl, gitUrl: $gitUrl, downloadUrl: $downloadUrl, type: $type, links: $links)';
+    return 'GithubItem(name: $name, path: $path, sha: $sha, size: $size, url: $url, htmlUrl: $htmlUrl, gitUrl: $gitUrl, downloadUrl: $downloadUrl, type: $type, links: $links)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GithubItemModel &&
+            other is _$_GithubItem &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.path, path) &&
             const DeepCollectionEquality().equals(other.sha, sha) &&
@@ -306,19 +304,19 @@ class _$_GithubItemModel implements _GithubItemModel {
 
   @JsonKey(ignore: true)
   @override
-  _$$_GithubItemModelCopyWith<_$_GithubItemModel> get copyWith =>
-      __$$_GithubItemModelCopyWithImpl<_$_GithubItemModel>(this, _$identity);
+  _$$_GithubItemCopyWith<_$_GithubItem> get copyWith =>
+      __$$_GithubItemCopyWithImpl<_$_GithubItem>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GithubItemModelToJson(
+    return _$$_GithubItemToJson(
       this,
     );
   }
 }
 
-abstract class _GithubItemModel implements GithubItemModel {
-  const factory _GithubItemModel(
+abstract class _GithubItem implements GithubItem {
+  const factory _GithubItem(
       {required final String? name,
       required final String? path,
       required final String? sha,
@@ -328,10 +326,10 @@ abstract class _GithubItemModel implements GithubItemModel {
       required final String? gitUrl,
       required final String? downloadUrl,
       required final String? type,
-      required final Links? links}) = _$_GithubItemModel;
+      required final Links? links}) = _$_GithubItem;
 
-  factory _GithubItemModel.fromJson(Map<String, dynamic> json) =
-      _$_GithubItemModel.fromJson;
+  factory _GithubItem.fromJson(Map<String, dynamic> json) =
+      _$_GithubItem.fromJson;
 
   @override
   String? get name;
@@ -355,7 +353,7 @@ abstract class _GithubItemModel implements GithubItemModel {
   Links? get links;
   @override
   @JsonKey(ignore: true)
-  _$$_GithubItemModelCopyWith<_$_GithubItemModel> get copyWith =>
+  _$$_GithubItemCopyWith<_$_GithubItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

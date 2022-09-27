@@ -16,7 +16,7 @@ class AppTileOrganism extends StatelessWidget {
           context.router.push(const AppRoute());
         },
         leading: const CircleAvatar(
-          child: Icon(Icons.system_security_update_rounded),
+          child: Icon(Icons.track_changes_outlined),
         ),
         title: TileTitleAtom(theme: theme),
         subtitle: TileSubtitleAtom(theme: theme),

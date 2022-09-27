@@ -22,3 +22,7 @@ const String kStringsAppDownload = 'Download';
 const String kStringsRoutesBrowse = 'browse';
 const String kStringsRoutesInstalled = 'installed';
 const String kStringsRoutesUpdates = 'updates';
+
+const String kStringsMessagesSometingWentWrong = 'Something Went Wrong.';
+const String kStringsMessagesRetry = 'Retry';
+const String kStringsLoading = 'Loading...';

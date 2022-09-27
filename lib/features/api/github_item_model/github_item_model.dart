@@ -6,8 +6,8 @@ part 'github_item_model.freezed.dart';
 part 'github_item_model.g.dart';
 
 @freezed
-abstract class GithubItemModel with _$GithubItemModel {
-  const factory GithubItemModel({
+abstract class GithubItem with _$GithubItem {
+  const factory GithubItem({
     required String? name,
     required String? path,
     required String? sha,
@@ -18,10 +18,15 @@ abstract class GithubItemModel with _$GithubItemModel {
     required String? downloadUrl,
     required String? type,
     required Links? links,
-  }) = _GithubItemModel;
+  }) = _GithubItem;
 
-  factory GithubItemModel.fromJson(Map<String, dynamic> json) =>
-      _$GithubItemModelFromJson(json);
+  factory GithubItem.fromDocument(dynamic jsonObject) {
+    final data = jsonObject as Map<String, dynamic>;
+    return GithubItem.fromJson(data);
+  }
+
+  factory GithubItem.fromJson(Map<String, dynamic> json) =>
+      _$GithubItemFromJson(json);
 }
 
 @freezed

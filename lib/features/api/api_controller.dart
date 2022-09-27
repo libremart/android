@@ -15,15 +15,19 @@ class ApiController extends StateNotifier<ApiState> {
     ApiState state,
     this.ref,
   ) : super(state) {
-    getAppReleases();
+    getAllPackagings();
   }
 
   final Ref ref;
 
-  getAppReleases() async {
-    state = state.copyWith(allProducts: const AsyncValue.loading());
-    final products = ref.read(apiServiceProvider).x;
-    // final rel = await ref.readapiService.getAppReleases();
-    // state = state.copyWith(allProducts: AsyncValue.data(rel));
+  getAllPackagings() async {
+    state = state.copyWith(allPackings: const AsyncValue.loading());
+    final packagings =
+        await ref.read(apiServiceProvider).fromGitItemsToPackings();
+    state = state.copyWith(allPackings: AsyncValue.data(packagings));
+  }
+
+  void selectIndexForPacking({required int selectedIndex}) {
+    state = state.copyWith(selectedPacking: selectedIndex);
   }
 }

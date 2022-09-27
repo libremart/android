@@ -1,4 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:libremart/features/api/api_repository.dart';
+import 'package:libremart/features/api/packing_model/packing_model.dart';
 import 'package:libremart/features/api/product_model/product_model.dart';
 
 final apiServiceProvider = Provider.autoDispose<ApiService>((ref) {
@@ -8,7 +10,9 @@ final apiServiceProvider = Provider.autoDispose<ApiService>((ref) {
 });
 
 abstract class ApiService {
-  List<ProductModel> fromDocument({required DocumentSnapshot doc});
+  Future<List<PackingModel>> fromGitItemsToPackings();
+  List<ProductModel> fromPackingsToProducts(
+      {required List<PackingModel?> packingList});
   // List<types.Message> resortMessages({required List<types.Message> messages});
   // List<types.Message> translateWatchedList(
   //     {required QuerySnapshot<Object?> data});
@@ -21,9 +25,25 @@ class LMApiService implements ApiService {
   final Ref ref;
 
   @override
-  List<ProductModel> translateAllFromGitItems({required DocumentSnapshot doc}) {
-    final data = doc.data()! as Map<String, dynamic>;
-    return types.Message.fromJson(data);
+  Future<List<PackingModel>> fromGitItemsToPackings() async {
+    final unFilteredProducts =
+        await ref.read(apiRepositoryProvider).getAllProductsFromGithubApi();
+    List<PackingModel> packingList = [];
+    unFilteredProducts?.map(
+          (unFilteredProduct) => packingList.add(
+            PackingModel(
+                name: unFilteredProduct.name, url: unFilteredProduct.url),
+          ),
+        ) ??
+        [];
+    return packingList;
+  }
+
+  @override
+  List<ProductModel> fromPackingsToProducts(
+      {required List<PackingModel?> packingList}) {
+    // WOW!
+    throw UnimplementedError();
   }
 }
 
