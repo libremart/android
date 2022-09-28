@@ -1,16 +1,21 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:libremart/features/api/github_item_model/github_item_model.dart';
 part 'packing_model.freezed.dart';
 part 'packing_model.g.dart';
 
 @freezed
-class PackingModel with _$PackingModel {
-  const PackingModel._();
+class Packing with _$Packing {
+  const Packing._();
 
-  const factory PackingModel({
+  const factory Packing({
     required String? name,
     required String? url,
-  }) = _PackingModel;
+  }) = _Packing;
 
-  factory PackingModel.fromJson(Map<String, dynamic> json) =>
-      _$PackingModelFromJson(json);
+  factory Packing.fromGithubItem(GithubItem githubItem) {
+    return Packing(name: githubItem.name, url: githubItem.downloadUrl);
+  }
+
+  factory Packing.fromJson(Map<String, dynamic> json) =>
+      _$PackingFromJson(json);
 }

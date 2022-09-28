@@ -3,10 +3,10 @@ part 'product_model.freezed.dart';
 part 'product_model.g.dart';
 
 @freezed
-class ProductModel with _$ProductModel {
-  const ProductModel._();
+class Product with _$Product {
+  const Product._();
 
-  const factory ProductModel({
+  const factory Product({
     required String? id,
     required String? published,
     required DateTime? updated,
@@ -20,8 +20,8 @@ class ProductModel with _$ProductModel {
     required String? description,
     required List<String?>? screenshots,
     required List<String?>? links,
-  }) = _ProductModel;
+  }) = _Product;
 
-  factory ProductModel.fromJson(Map<String, dynamic> json) =>
-      _$ProductModelFromJson(json);
+  factory Product.fromJson(Map<String, dynamic> json) =>
+      _$ProductFromJson(json);
 }

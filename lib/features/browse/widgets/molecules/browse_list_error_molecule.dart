@@ -21,7 +21,7 @@ class BrowseListError extends ConsumerWidget {
               (Utils.isDebugMode() ? (e?.toString() ?? "") : ""),
         ), //! TODO: Implement an SVG for something went wrong.
         ElevatedButton(
-          onPressed: ref.read(apiControllerProvider.notifier).getAllPackagings,
+          onPressed: ref.read(apiControllerProvider.notifier).getAllProducts,
           child: const Text(kStringsMessagesRetry),
         )
       ],

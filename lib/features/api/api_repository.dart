@@ -1,6 +1,8 @@
 import 'dart:convert';
 
 import 'package:libremart/features/api/github_item_model/github_item_model.dart';
+import 'package:libremart/features/api/packing_model/packing_model.dart';
+import 'package:libremart/features/api/product_model/product_model.dart';
 import 'package:libremart/main.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -15,8 +17,9 @@ final apiRepositoryProvider = Provider<ApiRepository>((ref) {
 });
 
 abstract class ApiRepository {
-  Future<List<GithubItem>>? getAllProductsFromGithubApi();
-  Future<void> getAllProductsFromGithubApiDyanmic();
+  Future<List<GithubItem>> getAllProductsInGithubItemsFormat();
+  Future<List<Product>> getSpecificProduct({required Packing packing});
+  // Future<void> getAllProductsFromGithubApiDyanmic();
 // Future<List<AppEntity>> getApps();
   // Future<List<MovieEntity>> getRecommendedMovies(double rating, String date, String genreIds);
 }
@@ -26,47 +29,51 @@ class LMApiRepository implements ApiRepository {
   final http.Client client;
 
   @override
-  Future<List<GithubItem>>? getAllProductsFromGithubApi() async {
-    T? cast<T>(x) => x is T ? x : null;
-
+  Future<List<GithubItem>> getAllProductsInGithubItemsFormat() async {
     final response = await client.get(Uri.parse(libreMartApiUrl));
     if (response.statusCode == 200) {
       final productsJson = jsonDecode(response.body);
-      List<Map<String, dynamic>>? wow =
-          cast<List<Map<String, dynamic>>>(productsJson);
-      return wow!.map((product) => GithubItem.fromDocument(product)).toList();
+
+      final List<Map<String, dynamic>> productsList =
+          List<Map<String, dynamic>>.from(productsJson);
+
+      return productsList
+          .map((product) => GithubItem.fromJson(product))
+          .toList();
     } else {
       throw UnimplementedError();
     }
   }
 
   @override
-  Future<void> getAllProductsFromGithubApiDyanmic() async {
-    final response = await client.get(Uri.parse(libreMartApiUrl));
+  Future<List<Product>> getSpecificProduct({required Packing packing}) async {
+    final response = await client.get(Uri.parse('${packing.url}'));
     if (response.statusCode == 200) {
-      final Map<String, dynamic> productsJson = jsonDecode(response.body);
-
-      print('${productsJson.runtimeType}');
-      // productsJson.map((product) => GithubItem.fromJson(product)).toList();
-
+      final productJson = jsonDecode(response.body);
+      final List<Map<String, dynamic>> product =
+          List<Map<String, dynamic>>.from(productJson);
+      print(product);
       throw UnimplementedError();
+      // return Product.fromJson(product);
     } else {
       throw UnimplementedError();
-    }
-  }
-
-  @override
-  Future<void> fuckThisShit() async {
-    var productList;
-    final response = await client.get(Uri.parse(libreMartApiUrl));
-    if (response.statusCode == 200) {
-      final List<dynamic> productsJson = jsonDecode(response.body);
-      // print("FUCK THIS SHIT!!! + $productsJson");
-      // print("Products Json Type!!! + ${productsJson.runtimeType}");
-      print("Products Json Type!!! + ${productsJson.runtimeType}");
-    } else {
-      print("Sorry, request is dead");
-      return Future.value(productList);
     }
   }
 }
+  // @override
+  // Future<void> getAllProductsFromGithubApiDyanmic() async {
+  //   final response = await client.get(Uri.parse(libreMartApiUrl));
+  //   if (response.statusCode == 200) {
+  //     final productsJson = jsonDecode(response.body);
+  //     final List<Map<String, dynamic>> productsList =
+  //         List<Map<String, dynamic>>.from(productsJson);
+  //     // print('First STRINGIFIED? ${response.body}');
+  //     // print('DECODED JSON: $productsJson');
+  //     final test =
+  //         productsList.map((product) => GithubItem.fromJson(product)).toList();
+  //     print('WOW! $test');
+  //   } else {
+  //     throw UnimplementedError();
+  //   }
+  // }
+

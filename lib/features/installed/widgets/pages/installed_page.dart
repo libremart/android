@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:libremart/features/api/api_repository.dart';
+import 'package:libremart/features/api/api_service.dart';
 
 class InstalledPage extends ConsumerWidget {
   const InstalledPage({Key? key}) : super(key: key);
@@ -14,9 +14,7 @@ class InstalledPage extends ConsumerWidget {
           child: Text('Outlined but not active'),
         ),
         OutlinedButton(
-          onPressed: ref
-              .read(apiRepositoryProvider)
-              .getAllProductsFromGithubApiDyanmic,
+          onPressed: ref.read(apiServiceProvider).fromGitItemsToPackings,
           child: const Text('Outlined button - TEST'),
         ),
         OutlinedButton.icon(

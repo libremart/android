@@ -14,36 +14,34 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-PackingModel _$PackingModelFromJson(Map<String, dynamic> json) {
-  return _PackingModel.fromJson(json);
+Packing _$PackingFromJson(Map<String, dynamic> json) {
+  return _Packing.fromJson(json);
 }
 
 /// @nodoc
-mixin _$PackingModel {
+mixin _$Packing {
   String? get name => throw _privateConstructorUsedError;
   String? get url => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $PackingModelCopyWith<PackingModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  $PackingCopyWith<Packing> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PackingModelCopyWith<$Res> {
-  factory $PackingModelCopyWith(
-          PackingModel value, $Res Function(PackingModel) then) =
-      _$PackingModelCopyWithImpl<$Res>;
+abstract class $PackingCopyWith<$Res> {
+  factory $PackingCopyWith(Packing value, $Res Function(Packing) then) =
+      _$PackingCopyWithImpl<$Res>;
   $Res call({String? name, String? url});
 }
 
 /// @nodoc
-class _$PackingModelCopyWithImpl<$Res> implements $PackingModelCopyWith<$Res> {
-  _$PackingModelCopyWithImpl(this._value, this._then);
+class _$PackingCopyWithImpl<$Res> implements $PackingCopyWith<$Res> {
+  _$PackingCopyWithImpl(this._value, this._then);
 
-  final PackingModel _value;
+  final Packing _value;
   // ignore: unused_field
-  final $Res Function(PackingModel) _then;
+  final $Res Function(Packing) _then;
 
   @override
   $Res call({
@@ -64,32 +62,29 @@ class _$PackingModelCopyWithImpl<$Res> implements $PackingModelCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$_PackingModelCopyWith<$Res>
-    implements $PackingModelCopyWith<$Res> {
-  factory _$$_PackingModelCopyWith(
-          _$_PackingModel value, $Res Function(_$_PackingModel) then) =
-      __$$_PackingModelCopyWithImpl<$Res>;
+abstract class _$$_PackingCopyWith<$Res> implements $PackingCopyWith<$Res> {
+  factory _$$_PackingCopyWith(
+          _$_Packing value, $Res Function(_$_Packing) then) =
+      __$$_PackingCopyWithImpl<$Res>;
   @override
   $Res call({String? name, String? url});
 }
 
 /// @nodoc
-class __$$_PackingModelCopyWithImpl<$Res>
-    extends _$PackingModelCopyWithImpl<$Res>
-    implements _$$_PackingModelCopyWith<$Res> {
-  __$$_PackingModelCopyWithImpl(
-      _$_PackingModel _value, $Res Function(_$_PackingModel) _then)
-      : super(_value, (v) => _then(v as _$_PackingModel));
+class __$$_PackingCopyWithImpl<$Res> extends _$PackingCopyWithImpl<$Res>
+    implements _$$_PackingCopyWith<$Res> {
+  __$$_PackingCopyWithImpl(_$_Packing _value, $Res Function(_$_Packing) _then)
+      : super(_value, (v) => _then(v as _$_Packing));
 
   @override
-  _$_PackingModel get _value => super._value as _$_PackingModel;
+  _$_Packing get _value => super._value as _$_Packing;
 
   @override
   $Res call({
     Object? name = freezed,
     Object? url = freezed,
   }) {
-    return _then(_$_PackingModel(
+    return _then(_$_Packing(
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -104,11 +99,11 @@ class __$$_PackingModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_PackingModel extends _PackingModel {
-  const _$_PackingModel({required this.name, required this.url}) : super._();
+class _$_Packing extends _Packing {
+  const _$_Packing({required this.name, required this.url}) : super._();
 
-  factory _$_PackingModel.fromJson(Map<String, dynamic> json) =>
-      _$$_PackingModelFromJson(json);
+  factory _$_Packing.fromJson(Map<String, dynamic> json) =>
+      _$$_PackingFromJson(json);
 
   @override
   final String? name;
@@ -117,14 +112,14 @@ class _$_PackingModel extends _PackingModel {
 
   @override
   String toString() {
-    return 'PackingModel(name: $name, url: $url)';
+    return 'Packing(name: $name, url: $url)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PackingModel &&
+            other is _$_Packing &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.url, url));
   }
@@ -138,25 +133,23 @@ class _$_PackingModel extends _PackingModel {
 
   @JsonKey(ignore: true)
   @override
-  _$$_PackingModelCopyWith<_$_PackingModel> get copyWith =>
-      __$$_PackingModelCopyWithImpl<_$_PackingModel>(this, _$identity);
+  _$$_PackingCopyWith<_$_Packing> get copyWith =>
+      __$$_PackingCopyWithImpl<_$_Packing>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PackingModelToJson(
+    return _$$_PackingToJson(
       this,
     );
   }
 }
 
-abstract class _PackingModel extends PackingModel {
-  const factory _PackingModel(
-      {required final String? name,
-      required final String? url}) = _$_PackingModel;
-  const _PackingModel._() : super._();
+abstract class _Packing extends Packing {
+  const factory _Packing(
+      {required final String? name, required final String? url}) = _$_Packing;
+  const _Packing._() : super._();
 
-  factory _PackingModel.fromJson(Map<String, dynamic> json) =
-      _$_PackingModel.fromJson;
+  factory _Packing.fromJson(Map<String, dynamic> json) = _$_Packing.fromJson;
 
   @override
   String? get name;
@@ -164,6 +157,6 @@ abstract class _PackingModel extends PackingModel {
   String? get url;
   @override
   @JsonKey(ignore: true)
-  _$$_PackingModelCopyWith<_$_PackingModel> get copyWith =>
+  _$$_PackingCopyWith<_$_Packing> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -16,10 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ApiState {
-  AsyncValue<List<PackingModel>>? get allPackings =>
+  AsyncValue<List<Packing>> get allPackings =>
       throw _privateConstructorUsedError;
-  int? get selectedPacking => throw _privateConstructorUsedError;
-  AsyncValue<List<GithubItem>>? get allProducts =>
+  int get selectedPacking => throw _privateConstructorUsedError;
+  AsyncValue<List<Product>> get allProducts =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -32,9 +32,9 @@ abstract class $ApiStateCopyWith<$Res> {
   factory $ApiStateCopyWith(ApiState value, $Res Function(ApiState) then) =
       _$ApiStateCopyWithImpl<$Res>;
   $Res call(
-      {AsyncValue<List<PackingModel>>? allPackings,
-      int? selectedPacking,
-      AsyncValue<List<GithubItem>>? allProducts});
+      {AsyncValue<List<Packing>> allPackings,
+      int selectedPacking,
+      AsyncValue<List<Product>> allProducts});
 }
 
 /// @nodoc
@@ -55,15 +55,15 @@ class _$ApiStateCopyWithImpl<$Res> implements $ApiStateCopyWith<$Res> {
       allPackings: allPackings == freezed
           ? _value.allPackings
           : allPackings // ignore: cast_nullable_to_non_nullable
-              as AsyncValue<List<PackingModel>>?,
+              as AsyncValue<List<Packing>>,
       selectedPacking: selectedPacking == freezed
           ? _value.selectedPacking
           : selectedPacking // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       allProducts: allProducts == freezed
           ? _value.allProducts
           : allProducts // ignore: cast_nullable_to_non_nullable
-              as AsyncValue<List<GithubItem>>?,
+              as AsyncValue<List<Product>>,
     ));
   }
 }
@@ -75,9 +75,9 @@ abstract class _$$_ApiStateCopyWith<$Res> implements $ApiStateCopyWith<$Res> {
       __$$_ApiStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {AsyncValue<List<PackingModel>>? allPackings,
-      int? selectedPacking,
-      AsyncValue<List<GithubItem>>? allProducts});
+      {AsyncValue<List<Packing>> allPackings,
+      int selectedPacking,
+      AsyncValue<List<Product>> allProducts});
 }
 
 /// @nodoc
@@ -100,15 +100,15 @@ class __$$_ApiStateCopyWithImpl<$Res> extends _$ApiStateCopyWithImpl<$Res>
       allPackings: allPackings == freezed
           ? _value.allPackings
           : allPackings // ignore: cast_nullable_to_non_nullable
-              as AsyncValue<List<PackingModel>>?,
+              as AsyncValue<List<Packing>>,
       selectedPacking: selectedPacking == freezed
           ? _value.selectedPacking
           : selectedPacking // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       allProducts: allProducts == freezed
           ? _value.allProducts
           : allProducts // ignore: cast_nullable_to_non_nullable
-              as AsyncValue<List<GithubItem>>?,
+              as AsyncValue<List<Product>>,
     ));
   }
 }
@@ -116,15 +116,18 @@ class __$$_ApiStateCopyWithImpl<$Res> extends _$ApiStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ApiState extends _ApiState {
-  const _$_ApiState({this.allPackings, this.selectedPacking, this.allProducts})
+  const _$_ApiState(
+      {required this.allPackings,
+      required this.selectedPacking,
+      required this.allProducts})
       : super._();
 
   @override
-  final AsyncValue<List<PackingModel>>? allPackings;
+  final AsyncValue<List<Packing>> allPackings;
   @override
-  final int? selectedPacking;
+  final int selectedPacking;
   @override
-  final AsyncValue<List<GithubItem>>? allProducts;
+  final AsyncValue<List<Product>> allProducts;
 
   @override
   String toString() {
@@ -159,17 +162,17 @@ class _$_ApiState extends _ApiState {
 
 abstract class _ApiState extends ApiState {
   const factory _ApiState(
-      {final AsyncValue<List<PackingModel>>? allPackings,
-      final int? selectedPacking,
-      final AsyncValue<List<GithubItem>>? allProducts}) = _$_ApiState;
+      {required final AsyncValue<List<Packing>> allPackings,
+      required final int selectedPacking,
+      required final AsyncValue<List<Product>> allProducts}) = _$_ApiState;
   const _ApiState._() : super._();
 
   @override
-  AsyncValue<List<PackingModel>>? get allPackings;
+  AsyncValue<List<Packing>> get allPackings;
   @override
-  int? get selectedPacking;
+  int get selectedPacking;
   @override
-  AsyncValue<List<GithubItem>>? get allProducts;
+  AsyncValue<List<Product>> get allProducts;
   @override
   @JsonKey(ignore: true)
   _$$_ApiStateCopyWith<_$_ApiState> get copyWith =>

@@ -12,7 +12,7 @@ class BrowseListViewOrganism extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return ref.watch(apiControllerProvider).allPackings?.when(
+    return ref.watch(apiControllerProvider).allProducts.when(
               data: (packings) => ListView.builder(
                 itemCount: packings.length,
                 itemBuilder: (context, index) {

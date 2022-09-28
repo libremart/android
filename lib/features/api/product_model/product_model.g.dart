@@ -6,8 +6,7 @@ part of 'product_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ProductModel _$$_ProductModelFromJson(Map<String, dynamic> json) =>
-    _$_ProductModel(
+_$_Product _$$_ProductFromJson(Map<String, dynamic> json) => _$_Product(
       id: json['id'] as String?,
       published: json['published'] as String?,
       updated: json['updated'] == null
@@ -28,7 +27,7 @@ _$_ProductModel _$$_ProductModelFromJson(Map<String, dynamic> json) =>
           (json['links'] as List<dynamic>?)?.map((e) => e as String?).toList(),
     );
 
-Map<String, dynamic> _$$_ProductModelToJson(_$_ProductModel instance) =>
+Map<String, dynamic> _$$_ProductToJson(_$_Product instance) =>
     <String, dynamic>{
       'id': instance.id,
       'published': instance.published,

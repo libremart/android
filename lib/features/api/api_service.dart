@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:libremart/features/api/api_repository.dart';
+import 'package:libremart/features/api/github_item_model/github_item_model.dart';
 import 'package:libremart/features/api/packing_model/packing_model.dart';
 import 'package:libremart/features/api/product_model/product_model.dart';
 
@@ -10,9 +11,11 @@ final apiServiceProvider = Provider.autoDispose<ApiService>((ref) {
 });
 
 abstract class ApiService {
-  Future<List<PackingModel>> fromGitItemsToPackings();
-  List<ProductModel> fromPackingsToProducts(
-      {required List<PackingModel?> packingList});
+  Future<List<Packing>> fromGitItemsToPackings();
+  Future<List<Product>> fromPackingsToProducts(
+      {required List<Packing> packingList});
+  // List<ProductModel> fromGitItemsToPackings(
+  // {required List<PackingModel?> packingList});
   // List<types.Message> resortMessages({required List<types.Message> messages});
   // List<types.Message> translateWatchedList(
   //     {required QuerySnapshot<Object?> data});
@@ -25,31 +28,37 @@ class LMApiService implements ApiService {
   final Ref ref;
 
   @override
-  Future<List<PackingModel>> fromGitItemsToPackings() async {
-    final unFilteredProducts =
-        await ref.read(apiRepositoryProvider).getAllProductsFromGithubApi();
-    List<PackingModel> packingList = [];
-    unFilteredProducts?.map(
-          (unFilteredProduct) => packingList.add(
-            PackingModel(
-                name: unFilteredProduct.name, url: unFilteredProduct.url),
-          ),
-        ) ??
-        [];
-    return packingList;
+  Future<List<Packing>> fromGitItemsToPackings() async {
+    final List<GithubItem> githubItems = await ref
+        .read(apiRepositoryProvider)
+        .getAllProductsInGithubItemsFormat();
+
+    return githubItems.map((item) => Packing.fromGithubItem(item)).toList();
+
+    // githubItems.map(
+    //       (githubItemProduct) => packingList.add(
+    //         Packing(name: githubItemProduct.name, url: githubItemProduct.url),
+    //       ),
+    //     ) ??
+    //     [];
+    // return packingList;
   }
 
   @override
-  List<ProductModel> fromPackingsToProducts(
-      {required List<PackingModel?> packingList}) {
-    // WOW!
-    throw UnimplementedError();
+  Future<List<Product>> fromPackingsToProducts(
+      {required List<Packing> packingList}) async {
+    List<Product> products = [];
+
+    for (var packing in packingList) {
+      final List<Product> product = await ref
+          .read(apiRepositoryProvider)
+          .getSpecificProduct(packing: packing);
+
+      products = product;
+    }
+    return products;
   }
 }
-
-
-
-
 
 // here we translate githubapi item for product json -> api-> productitem. ok? 
 // then we move all of them to the controller -> state. 
