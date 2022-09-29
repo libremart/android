@@ -1,4 +1,4 @@
-package com.example.first_linux_app
+package com.libremart.android
 
 import io.flutter.embedding.android.FlutterActivity
 
