@@ -11,8 +11,8 @@ class UpdatesPage extends ConsumerWidget {
     return Center(
       // child: DisplaySmall(data: 'All your applications are up to date'),
 
-      child: ref.watch(apiControllerProvider).allPackings.when(
-                data: (packings) => DisplaySmall(data: packings.toString()),
+      child: ref.watch(apiControllerProvider).allProducts.when(
+                data: (products) => DisplaySmall(data: products.toString()),
                 error: (e, s) => const Text('now error'),
                 loading: () => const Text('now loading'),
               ) ??

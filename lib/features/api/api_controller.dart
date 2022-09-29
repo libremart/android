@@ -5,7 +5,7 @@ import 'package:libremart/features/api/packing_model/packing_model.dart';
 import 'package:libremart/features/api/product_model/product_model.dart';
 
 final apiControllerProvider =
-    StateNotifierProvider.autoDispose<ApiController, ApiState>((ref) {
+    StateNotifierProvider<ApiController, ApiState>((ref) {
   return ApiController(
     ApiState.initial(),
     ref,
@@ -40,7 +40,7 @@ class ApiController extends StateNotifier<ApiState> {
     state = state.copyWith(allPackings: AsyncValue.data(packings));
   }
 
-  void selectIndexForPacking({required int selectedIndex}) {
-    state = state.copyWith(selectedPacking: selectedIndex);
+  void setSelectedProduct({required Product selectedProduct}) {
+    state = state.copyWith(selectedProduct: selectedProduct);
   }
 }

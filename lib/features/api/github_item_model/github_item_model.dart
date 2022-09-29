@@ -13,9 +13,9 @@ abstract class GithubItem with _$GithubItem {
     required String? sha,
     required int? size,
     required String? url,
-    required String? htmlUrl,
-    required String? gitUrl,
-    required String? downloadUrl,
+    required String? html_url,
+    required String? git_url,
+    required String? download_url,
     required String? type,
     required Links? links,
   }) = _GithubItem;

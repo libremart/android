@@ -13,7 +13,8 @@ class Packing with _$Packing {
   }) = _Packing;
 
   factory Packing.fromGithubItem(GithubItem githubItem) {
-    return Packing(name: githubItem.name, url: githubItem.downloadUrl);
+    print('WTF!!!! ${githubItem.download_url}');
+    return Packing(name: githubItem.name, url: githubItem.download_url);
   }
 
   factory Packing.fromJson(Map<String, dynamic> json) =>

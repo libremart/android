@@ -10,15 +10,15 @@ class ApiState with _$ApiState {
 
   const factory ApiState({
     required AsyncValue<List<Packing>> allPackings,
-    required int selectedPacking,
+    required Product selectedProduct,
     required AsyncValue<List<Product>> allProducts,
   }) = _ApiState;
 
   factory ApiState.initial() {
-    return const ApiState(
-      allPackings: AsyncValue.data([]),
-      selectedPacking: 0,
-      allProducts: AsyncValue.data([]),
+    return ApiState(
+      allPackings: const AsyncValue.data([]),
+      selectedProduct: Product.initial(),
+      allProducts: const AsyncValue.data([]),
     );
   }
 }

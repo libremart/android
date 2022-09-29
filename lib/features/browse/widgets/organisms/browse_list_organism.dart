@@ -13,13 +13,10 @@ class BrowseListViewOrganism extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return ref.watch(apiControllerProvider).allProducts.when(
-              data: (packings) => ListView.builder(
-                itemCount: packings.length,
+              data: (products) => ListView.builder(
+                itemCount: products.length,
                 itemBuilder: (context, index) {
-                  ref
-                      .read(apiControllerProvider.notifier)
-                      .selectIndexForPacking(selectedIndex: index);
-                  return const AppTileOrganism();
+                  return AppTileOrganism(index: index);
                 },
               ),
               error: (e, s) => BrowseListError(e),

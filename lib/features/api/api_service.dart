@@ -50,11 +50,11 @@ class LMApiService implements ApiService {
     List<Product> products = [];
 
     for (var packing in packingList) {
-      final List<Product> product = await ref
+      final Product product = await ref
           .read(apiRepositoryProvider)
           .getSpecificProduct(packing: packing);
 
-      products = product;
+      products.add(product);
     }
     return products;
   }

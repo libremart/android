@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ApiState {
   AsyncValue<List<Packing>> get allPackings =>
       throw _privateConstructorUsedError;
-  int get selectedPacking => throw _privateConstructorUsedError;
+  Product get selectedProduct => throw _privateConstructorUsedError;
   AsyncValue<List<Product>> get allProducts =>
       throw _privateConstructorUsedError;
 
@@ -33,8 +33,10 @@ abstract class $ApiStateCopyWith<$Res> {
       _$ApiStateCopyWithImpl<$Res>;
   $Res call(
       {AsyncValue<List<Packing>> allPackings,
-      int selectedPacking,
+      Product selectedProduct,
       AsyncValue<List<Product>> allProducts});
+
+  $ProductCopyWith<$Res> get selectedProduct;
 }
 
 /// @nodoc
@@ -48,7 +50,7 @@ class _$ApiStateCopyWithImpl<$Res> implements $ApiStateCopyWith<$Res> {
   @override
   $Res call({
     Object? allPackings = freezed,
-    Object? selectedPacking = freezed,
+    Object? selectedProduct = freezed,
     Object? allProducts = freezed,
   }) {
     return _then(_value.copyWith(
@@ -56,15 +58,22 @@ class _$ApiStateCopyWithImpl<$Res> implements $ApiStateCopyWith<$Res> {
           ? _value.allPackings
           : allPackings // ignore: cast_nullable_to_non_nullable
               as AsyncValue<List<Packing>>,
-      selectedPacking: selectedPacking == freezed
-          ? _value.selectedPacking
-          : selectedPacking // ignore: cast_nullable_to_non_nullable
-              as int,
+      selectedProduct: selectedProduct == freezed
+          ? _value.selectedProduct
+          : selectedProduct // ignore: cast_nullable_to_non_nullable
+              as Product,
       allProducts: allProducts == freezed
           ? _value.allProducts
           : allProducts // ignore: cast_nullable_to_non_nullable
               as AsyncValue<List<Product>>,
     ));
+  }
+
+  @override
+  $ProductCopyWith<$Res> get selectedProduct {
+    return $ProductCopyWith<$Res>(_value.selectedProduct, (value) {
+      return _then(_value.copyWith(selectedProduct: value));
+    });
   }
 }
 
@@ -76,8 +85,11 @@ abstract class _$$_ApiStateCopyWith<$Res> implements $ApiStateCopyWith<$Res> {
   @override
   $Res call(
       {AsyncValue<List<Packing>> allPackings,
-      int selectedPacking,
+      Product selectedProduct,
       AsyncValue<List<Product>> allProducts});
+
+  @override
+  $ProductCopyWith<$Res> get selectedProduct;
 }
 
 /// @nodoc
@@ -93,7 +105,7 @@ class __$$_ApiStateCopyWithImpl<$Res> extends _$ApiStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? allPackings = freezed,
-    Object? selectedPacking = freezed,
+    Object? selectedProduct = freezed,
     Object? allProducts = freezed,
   }) {
     return _then(_$_ApiState(
@@ -101,10 +113,10 @@ class __$$_ApiStateCopyWithImpl<$Res> extends _$ApiStateCopyWithImpl<$Res>
           ? _value.allPackings
           : allPackings // ignore: cast_nullable_to_non_nullable
               as AsyncValue<List<Packing>>,
-      selectedPacking: selectedPacking == freezed
-          ? _value.selectedPacking
-          : selectedPacking // ignore: cast_nullable_to_non_nullable
-              as int,
+      selectedProduct: selectedProduct == freezed
+          ? _value.selectedProduct
+          : selectedProduct // ignore: cast_nullable_to_non_nullable
+              as Product,
       allProducts: allProducts == freezed
           ? _value.allProducts
           : allProducts // ignore: cast_nullable_to_non_nullable
@@ -118,20 +130,20 @@ class __$$_ApiStateCopyWithImpl<$Res> extends _$ApiStateCopyWithImpl<$Res>
 class _$_ApiState extends _ApiState {
   const _$_ApiState(
       {required this.allPackings,
-      required this.selectedPacking,
+      required this.selectedProduct,
       required this.allProducts})
       : super._();
 
   @override
   final AsyncValue<List<Packing>> allPackings;
   @override
-  final int selectedPacking;
+  final Product selectedProduct;
   @override
   final AsyncValue<List<Product>> allProducts;
 
   @override
   String toString() {
-    return 'ApiState(allPackings: $allPackings, selectedPacking: $selectedPacking, allProducts: $allProducts)';
+    return 'ApiState(allPackings: $allPackings, selectedProduct: $selectedProduct, allProducts: $allProducts)';
   }
 
   @override
@@ -142,7 +154,7 @@ class _$_ApiState extends _ApiState {
             const DeepCollectionEquality()
                 .equals(other.allPackings, allPackings) &&
             const DeepCollectionEquality()
-                .equals(other.selectedPacking, selectedPacking) &&
+                .equals(other.selectedProduct, selectedProduct) &&
             const DeepCollectionEquality()
                 .equals(other.allProducts, allProducts));
   }
@@ -151,7 +163,7 @@ class _$_ApiState extends _ApiState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(allPackings),
-      const DeepCollectionEquality().hash(selectedPacking),
+      const DeepCollectionEquality().hash(selectedProduct),
       const DeepCollectionEquality().hash(allProducts));
 
   @JsonKey(ignore: true)
@@ -163,14 +175,14 @@ class _$_ApiState extends _ApiState {
 abstract class _ApiState extends ApiState {
   const factory _ApiState(
       {required final AsyncValue<List<Packing>> allPackings,
-      required final int selectedPacking,
+      required final Product selectedProduct,
       required final AsyncValue<List<Product>> allProducts}) = _$_ApiState;
   const _ApiState._() : super._();
 
   @override
   AsyncValue<List<Packing>> get allPackings;
   @override
-  int get selectedPacking;
+  Product get selectedProduct;
   @override
   AsyncValue<List<Product>> get allProducts;
   @override

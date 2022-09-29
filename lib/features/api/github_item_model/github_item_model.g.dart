@@ -13,9 +13,9 @@ _$_GithubItem _$$_GithubItemFromJson(Map<String, dynamic> json) =>
       sha: json['sha'] as String?,
       size: json['size'] as int?,
       url: json['url'] as String?,
-      htmlUrl: json['htmlUrl'] as String?,
-      gitUrl: json['gitUrl'] as String?,
-      downloadUrl: json['downloadUrl'] as String?,
+      html_url: json['html_url'] as String?,
+      git_url: json['git_url'] as String?,
+      download_url: json['download_url'] as String?,
       type: json['type'] as String?,
       links: json['links'] == null
           ? null
@@ -29,9 +29,9 @@ Map<String, dynamic> _$$_GithubItemToJson(_$_GithubItem instance) =>
       'sha': instance.sha,
       'size': instance.size,
       'url': instance.url,
-      'htmlUrl': instance.htmlUrl,
-      'gitUrl': instance.gitUrl,
-      'downloadUrl': instance.downloadUrl,
+      'html_url': instance.html_url,
+      'git_url': instance.git_url,
+      'download_url': instance.download_url,
       'type': instance.type,
       'links': instance.links,
     };

@@ -1,3 +1,4 @@
+import 'package:libremart/features/api/api_controller.dart';
 import 'package:libremart/features/browse/widgets/atoms/elevated_download_button_atom.dart';
 import 'package:libremart/features/browse/widgets/organisms/app_container_organism.dart';
 import 'package:libremart/features/browse/widgets/organisms/panels_organism.dart';
@@ -10,6 +11,7 @@ class AppPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final product = ref.watch(apiControllerProvider).selectedProduct;
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -17,8 +19,9 @@ class AppPage extends ConsumerWidget {
           const ElevatedDownloadButtonAtom(),
           Padding(
             padding: EdgeInsets.all(4.w),
-            child: const Text(
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            child: Text(
+              product.description ??
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             ),
           ),
           const PanelsOrganism(),

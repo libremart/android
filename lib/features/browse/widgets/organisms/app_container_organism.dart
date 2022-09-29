@@ -1,3 +1,5 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:libremart/features/api/api_controller.dart';
 import 'package:libremart/features/browse/widgets/atoms/app_image_atom.dart';
 import 'package:libremart/features/browse/widgets/atoms/vertical_divider_atom.dart';
 import 'package:libremart/features/browse/widgets/molecules/app_detail_molecule.dart';
@@ -5,12 +7,13 @@ import 'package:libremart/theme/constants.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:flutter/material.dart';
 
-class AppContainerOrganism extends StatelessWidget {
+class AppContainerOrganism extends ConsumerWidget {
   const AppContainerOrganism({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
+    final product = ref.read(apiControllerProvider).selectedProduct;
     return Padding(
       padding: EdgeInsets.symmetric(
         vertical: 2.h,
@@ -33,12 +36,12 @@ class AppContainerOrganism extends StatelessWidget {
               Column(
                 children: [
                   Text(
-                    'App Name',
+                    product.productName ?? 'App Name',
                     style: theme.textTheme.titleLarge
                         ?.copyWith(color: theme.colorScheme.onSurface),
                   ),
                   Text(
-                    'me.lucky.wasted',
+                    product.productPackage ?? 'me.lucky.wasted',
                     style: theme.textTheme.bodyLarge
                         ?.copyWith(color: theme.colorScheme.onSurfaceVariant),
                   ),
@@ -54,6 +57,7 @@ class AppContainerOrganism extends StatelessWidget {
                   AppDetailMolecule(
                     theme: theme,
                     type: kStringsAppDetailVersion,
+                    // product.currentVersion ??
                     data: '1.5.1',
                   ),
                   VerticalDividerAtom(theme: theme),
@@ -66,7 +70,7 @@ class AppContainerOrganism extends StatelessWidget {
                   AppDetailMolecule(
                     theme: theme,
                     type: 'Source Code',
-                    data: '1.5.1',
+                    data: '',
                   ),
                 ],
               ),

@@ -25,9 +25,9 @@ mixin _$GithubItem {
   String? get sha => throw _privateConstructorUsedError;
   int? get size => throw _privateConstructorUsedError;
   String? get url => throw _privateConstructorUsedError;
-  String? get htmlUrl => throw _privateConstructorUsedError;
-  String? get gitUrl => throw _privateConstructorUsedError;
-  String? get downloadUrl => throw _privateConstructorUsedError;
+  String? get html_url => throw _privateConstructorUsedError;
+  String? get git_url => throw _privateConstructorUsedError;
+  String? get download_url => throw _privateConstructorUsedError;
   String? get type => throw _privateConstructorUsedError;
   Links? get links => throw _privateConstructorUsedError;
 
@@ -48,9 +48,9 @@ abstract class $GithubItemCopyWith<$Res> {
       String? sha,
       int? size,
       String? url,
-      String? htmlUrl,
-      String? gitUrl,
-      String? downloadUrl,
+      String? html_url,
+      String? git_url,
+      String? download_url,
       String? type,
       Links? links});
 
@@ -72,9 +72,9 @@ class _$GithubItemCopyWithImpl<$Res> implements $GithubItemCopyWith<$Res> {
     Object? sha = freezed,
     Object? size = freezed,
     Object? url = freezed,
-    Object? htmlUrl = freezed,
-    Object? gitUrl = freezed,
-    Object? downloadUrl = freezed,
+    Object? html_url = freezed,
+    Object? git_url = freezed,
+    Object? download_url = freezed,
     Object? type = freezed,
     Object? links = freezed,
   }) {
@@ -99,17 +99,17 @@ class _$GithubItemCopyWithImpl<$Res> implements $GithubItemCopyWith<$Res> {
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      htmlUrl: htmlUrl == freezed
-          ? _value.htmlUrl
-          : htmlUrl // ignore: cast_nullable_to_non_nullable
+      html_url: html_url == freezed
+          ? _value.html_url
+          : html_url // ignore: cast_nullable_to_non_nullable
               as String?,
-      gitUrl: gitUrl == freezed
-          ? _value.gitUrl
-          : gitUrl // ignore: cast_nullable_to_non_nullable
+      git_url: git_url == freezed
+          ? _value.git_url
+          : git_url // ignore: cast_nullable_to_non_nullable
               as String?,
-      downloadUrl: downloadUrl == freezed
-          ? _value.downloadUrl
-          : downloadUrl // ignore: cast_nullable_to_non_nullable
+      download_url: download_url == freezed
+          ? _value.download_url
+          : download_url // ignore: cast_nullable_to_non_nullable
               as String?,
       type: type == freezed
           ? _value.type
@@ -147,9 +147,9 @@ abstract class _$$_GithubItemCopyWith<$Res>
       String? sha,
       int? size,
       String? url,
-      String? htmlUrl,
-      String? gitUrl,
-      String? downloadUrl,
+      String? html_url,
+      String? git_url,
+      String? download_url,
       String? type,
       Links? links});
 
@@ -174,9 +174,9 @@ class __$$_GithubItemCopyWithImpl<$Res> extends _$GithubItemCopyWithImpl<$Res>
     Object? sha = freezed,
     Object? size = freezed,
     Object? url = freezed,
-    Object? htmlUrl = freezed,
-    Object? gitUrl = freezed,
-    Object? downloadUrl = freezed,
+    Object? html_url = freezed,
+    Object? git_url = freezed,
+    Object? download_url = freezed,
     Object? type = freezed,
     Object? links = freezed,
   }) {
@@ -201,17 +201,17 @@ class __$$_GithubItemCopyWithImpl<$Res> extends _$GithubItemCopyWithImpl<$Res>
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      htmlUrl: htmlUrl == freezed
-          ? _value.htmlUrl
-          : htmlUrl // ignore: cast_nullable_to_non_nullable
+      html_url: html_url == freezed
+          ? _value.html_url
+          : html_url // ignore: cast_nullable_to_non_nullable
               as String?,
-      gitUrl: gitUrl == freezed
-          ? _value.gitUrl
-          : gitUrl // ignore: cast_nullable_to_non_nullable
+      git_url: git_url == freezed
+          ? _value.git_url
+          : git_url // ignore: cast_nullable_to_non_nullable
               as String?,
-      downloadUrl: downloadUrl == freezed
-          ? _value.downloadUrl
-          : downloadUrl // ignore: cast_nullable_to_non_nullable
+      download_url: download_url == freezed
+          ? _value.download_url
+          : download_url // ignore: cast_nullable_to_non_nullable
               as String?,
       type: type == freezed
           ? _value.type
@@ -234,9 +234,9 @@ class _$_GithubItem implements _GithubItem {
       required this.sha,
       required this.size,
       required this.url,
-      required this.htmlUrl,
-      required this.gitUrl,
-      required this.downloadUrl,
+      required this.html_url,
+      required this.git_url,
+      required this.download_url,
       required this.type,
       required this.links});
 
@@ -254,11 +254,11 @@ class _$_GithubItem implements _GithubItem {
   @override
   final String? url;
   @override
-  final String? htmlUrl;
+  final String? html_url;
   @override
-  final String? gitUrl;
+  final String? git_url;
   @override
-  final String? downloadUrl;
+  final String? download_url;
   @override
   final String? type;
   @override
@@ -266,7 +266,7 @@ class _$_GithubItem implements _GithubItem {
 
   @override
   String toString() {
-    return 'GithubItem(name: $name, path: $path, sha: $sha, size: $size, url: $url, htmlUrl: $htmlUrl, gitUrl: $gitUrl, downloadUrl: $downloadUrl, type: $type, links: $links)';
+    return 'GithubItem(name: $name, path: $path, sha: $sha, size: $size, url: $url, html_url: $html_url, git_url: $git_url, download_url: $download_url, type: $type, links: $links)';
   }
 
   @override
@@ -279,10 +279,10 @@ class _$_GithubItem implements _GithubItem {
             const DeepCollectionEquality().equals(other.sha, sha) &&
             const DeepCollectionEquality().equals(other.size, size) &&
             const DeepCollectionEquality().equals(other.url, url) &&
-            const DeepCollectionEquality().equals(other.htmlUrl, htmlUrl) &&
-            const DeepCollectionEquality().equals(other.gitUrl, gitUrl) &&
+            const DeepCollectionEquality().equals(other.html_url, html_url) &&
+            const DeepCollectionEquality().equals(other.git_url, git_url) &&
             const DeepCollectionEquality()
-                .equals(other.downloadUrl, downloadUrl) &&
+                .equals(other.download_url, download_url) &&
             const DeepCollectionEquality().equals(other.type, type) &&
             const DeepCollectionEquality().equals(other.links, links));
   }
@@ -296,9 +296,9 @@ class _$_GithubItem implements _GithubItem {
       const DeepCollectionEquality().hash(sha),
       const DeepCollectionEquality().hash(size),
       const DeepCollectionEquality().hash(url),
-      const DeepCollectionEquality().hash(htmlUrl),
-      const DeepCollectionEquality().hash(gitUrl),
-      const DeepCollectionEquality().hash(downloadUrl),
+      const DeepCollectionEquality().hash(html_url),
+      const DeepCollectionEquality().hash(git_url),
+      const DeepCollectionEquality().hash(download_url),
       const DeepCollectionEquality().hash(type),
       const DeepCollectionEquality().hash(links));
 
@@ -322,9 +322,9 @@ abstract class _GithubItem implements GithubItem {
       required final String? sha,
       required final int? size,
       required final String? url,
-      required final String? htmlUrl,
-      required final String? gitUrl,
-      required final String? downloadUrl,
+      required final String? html_url,
+      required final String? git_url,
+      required final String? download_url,
       required final String? type,
       required final Links? links}) = _$_GithubItem;
 
@@ -342,11 +342,11 @@ abstract class _GithubItem implements GithubItem {
   @override
   String? get url;
   @override
-  String? get htmlUrl;
+  String? get html_url;
   @override
-  String? get gitUrl;
+  String? get git_url;
   @override
-  String? get downloadUrl;
+  String? get download_url;
   @override
   String? get type;
   @override

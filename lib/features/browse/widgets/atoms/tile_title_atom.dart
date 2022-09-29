@@ -12,10 +12,10 @@ class TileTitleAtom extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final apiController = ref.read(apiControllerProvider);
-    final products = apiController.allProducts.asData?.value ?? [];
+    final product = ref.read(apiControllerProvider).selectedProduct;
+
     return Text(
-      products[apiController.selectedPacking].productName!,
+      product.productName!,
       style: theme.textTheme.titleMedium,
     );
   }

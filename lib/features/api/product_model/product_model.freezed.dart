@@ -22,7 +22,7 @@ Product _$ProductFromJson(Map<String, dynamic> json) {
 mixin _$Product {
   String? get id => throw _privateConstructorUsedError;
   String? get published => throw _privateConstructorUsedError;
-  DateTime? get updated => throw _privateConstructorUsedError;
+  String? get updated => throw _privateConstructorUsedError;
   String? get product => throw _privateConstructorUsedError;
   String? get productName => throw _privateConstructorUsedError;
   String? get productPackage => throw _privateConstructorUsedError;
@@ -31,8 +31,9 @@ mixin _$Product {
   String? get iconUrl => throw _privateConstructorUsedError;
   String? get subtitle => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
-  List<String?>? get screenshots => throw _privateConstructorUsedError;
-  List<String?>? get links => throw _privateConstructorUsedError;
+  String? get donateLink => throw _privateConstructorUsedError;
+  List<String>? get screenshots => throw _privateConstructorUsedError;
+  List<String>? get links => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -46,7 +47,7 @@ abstract class $ProductCopyWith<$Res> {
   $Res call(
       {String? id,
       String? published,
-      DateTime? updated,
+      String? updated,
       String? product,
       String? productName,
       String? productPackage,
@@ -55,8 +56,9 @@ abstract class $ProductCopyWith<$Res> {
       String? iconUrl,
       String? subtitle,
       String? description,
-      List<String?>? screenshots,
-      List<String?>? links});
+      String? donateLink,
+      List<String>? screenshots,
+      List<String>? links});
 }
 
 /// @nodoc
@@ -80,6 +82,7 @@ class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
     Object? iconUrl = freezed,
     Object? subtitle = freezed,
     Object? description = freezed,
+    Object? donateLink = freezed,
     Object? screenshots = freezed,
     Object? links = freezed,
   }) {
@@ -95,7 +98,7 @@ class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
       updated: updated == freezed
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as String?,
       product: product == freezed
           ? _value.product
           : product // ignore: cast_nullable_to_non_nullable
@@ -128,14 +131,18 @@ class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
+      donateLink: donateLink == freezed
+          ? _value.donateLink
+          : donateLink // ignore: cast_nullable_to_non_nullable
+              as String?,
       screenshots: screenshots == freezed
           ? _value.screenshots
           : screenshots // ignore: cast_nullable_to_non_nullable
-              as List<String?>?,
+              as List<String>?,
       links: links == freezed
           ? _value.links
           : links // ignore: cast_nullable_to_non_nullable
-              as List<String?>?,
+              as List<String>?,
     ));
   }
 }
@@ -149,7 +156,7 @@ abstract class _$$_ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
   $Res call(
       {String? id,
       String? published,
-      DateTime? updated,
+      String? updated,
       String? product,
       String? productName,
       String? productPackage,
@@ -158,8 +165,9 @@ abstract class _$$_ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
       String? iconUrl,
       String? subtitle,
       String? description,
-      List<String?>? screenshots,
-      List<String?>? links});
+      String? donateLink,
+      List<String>? screenshots,
+      List<String>? links});
 }
 
 /// @nodoc
@@ -184,6 +192,7 @@ class __$$_ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
     Object? iconUrl = freezed,
     Object? subtitle = freezed,
     Object? description = freezed,
+    Object? donateLink = freezed,
     Object? screenshots = freezed,
     Object? links = freezed,
   }) {
@@ -199,7 +208,7 @@ class __$$_ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
       updated: updated == freezed
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as String?,
       product: product == freezed
           ? _value.product
           : product // ignore: cast_nullable_to_non_nullable
@@ -232,14 +241,18 @@ class __$$_ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
+      donateLink: donateLink == freezed
+          ? _value.donateLink
+          : donateLink // ignore: cast_nullable_to_non_nullable
+              as String?,
       screenshots: screenshots == freezed
           ? _value._screenshots
           : screenshots // ignore: cast_nullable_to_non_nullable
-              as List<String?>?,
+              as List<String>?,
       links: links == freezed
           ? _value._links
           : links // ignore: cast_nullable_to_non_nullable
-              as List<String?>?,
+              as List<String>?,
     ));
   }
 }
@@ -259,8 +272,9 @@ class _$_Product extends _Product {
       required this.iconUrl,
       required this.subtitle,
       required this.description,
-      required final List<String?>? screenshots,
-      required final List<String?>? links})
+      required this.donateLink,
+      required final List<String>? screenshots,
+      required final List<String>? links})
       : _screenshots = screenshots,
         _links = links,
         super._();
@@ -273,7 +287,7 @@ class _$_Product extends _Product {
   @override
   final String? published;
   @override
-  final DateTime? updated;
+  final String? updated;
   @override
   final String? product;
   @override
@@ -290,18 +304,20 @@ class _$_Product extends _Product {
   final String? subtitle;
   @override
   final String? description;
-  final List<String?>? _screenshots;
   @override
-  List<String?>? get screenshots {
+  final String? donateLink;
+  final List<String>? _screenshots;
+  @override
+  List<String>? get screenshots {
     final value = _screenshots;
     if (value == null) return null;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
 
-  final List<String?>? _links;
+  final List<String>? _links;
   @override
-  List<String?>? get links {
+  List<String>? get links {
     final value = _links;
     if (value == null) return null;
     // ignore: implicit_dynamic_type
@@ -310,7 +326,7 @@ class _$_Product extends _Product {
 
   @override
   String toString() {
-    return 'Product(id: $id, published: $published, updated: $updated, product: $product, productName: $productName, productPackage: $productPackage, vendor: $vendor, vendorName: $vendorName, iconUrl: $iconUrl, subtitle: $subtitle, description: $description, screenshots: $screenshots, links: $links)';
+    return 'Product(id: $id, published: $published, updated: $updated, product: $product, productName: $productName, productPackage: $productPackage, vendor: $vendor, vendorName: $vendorName, iconUrl: $iconUrl, subtitle: $subtitle, description: $description, donateLink: $donateLink, screenshots: $screenshots, links: $links)';
   }
 
   @override
@@ -334,6 +350,8 @@ class _$_Product extends _Product {
             const DeepCollectionEquality()
                 .equals(other.description, description) &&
             const DeepCollectionEquality()
+                .equals(other.donateLink, donateLink) &&
+            const DeepCollectionEquality()
                 .equals(other._screenshots, _screenshots) &&
             const DeepCollectionEquality().equals(other._links, _links));
   }
@@ -353,6 +371,7 @@ class _$_Product extends _Product {
       const DeepCollectionEquality().hash(iconUrl),
       const DeepCollectionEquality().hash(subtitle),
       const DeepCollectionEquality().hash(description),
+      const DeepCollectionEquality().hash(donateLink),
       const DeepCollectionEquality().hash(_screenshots),
       const DeepCollectionEquality().hash(_links));
 
@@ -373,7 +392,7 @@ abstract class _Product extends Product {
   const factory _Product(
       {required final String? id,
       required final String? published,
-      required final DateTime? updated,
+      required final String? updated,
       required final String? product,
       required final String? productName,
       required final String? productPackage,
@@ -382,8 +401,9 @@ abstract class _Product extends Product {
       required final String? iconUrl,
       required final String? subtitle,
       required final String? description,
-      required final List<String?>? screenshots,
-      required final List<String?>? links}) = _$_Product;
+      required final String? donateLink,
+      required final List<String>? screenshots,
+      required final List<String>? links}) = _$_Product;
   const _Product._() : super._();
 
   factory _Product.fromJson(Map<String, dynamic> json) = _$_Product.fromJson;
@@ -393,7 +413,7 @@ abstract class _Product extends Product {
   @override
   String? get published;
   @override
-  DateTime? get updated;
+  String? get updated;
   @override
   String? get product;
   @override
@@ -411,9 +431,11 @@ abstract class _Product extends Product {
   @override
   String? get description;
   @override
-  List<String?>? get screenshots;
+  String? get donateLink;
   @override
-  List<String?>? get links;
+  List<String>? get screenshots;
+  @override
+  List<String>? get links;
   @override
   @JsonKey(ignore: true)
   _$$_ProductCopyWith<_$_Product> get copyWith =>

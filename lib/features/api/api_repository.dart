@@ -8,7 +8,8 @@ import 'package:http/http.dart' as http;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 const String libreMartApiUrl =
-    'https://api.github.com/repos/libremart/products/contents';
+    // 'https://api.github.com/repos/libremart/products/contents';
+    'https://api.github.com/repos/libremart/products/contents/?ref=WIP/only-json';
 // "https://dummyjson.com/products/1";
 
 final apiRepositoryProvider = Provider<ApiRepository>((ref) {
@@ -18,7 +19,7 @@ final apiRepositoryProvider = Provider<ApiRepository>((ref) {
 
 abstract class ApiRepository {
   Future<List<GithubItem>> getAllProductsInGithubItemsFormat();
-  Future<List<Product>> getSpecificProduct({required Packing packing});
+  Future<Product> getSpecificProduct({required Packing packing});
   // Future<void> getAllProductsFromGithubApiDyanmic();
 // Future<List<AppEntity>> getApps();
   // Future<List<MovieEntity>> getRecommendedMovies(double rating, String date, String genreIds);
@@ -32,12 +33,12 @@ class LMApiRepository implements ApiRepository {
   Future<List<GithubItem>> getAllProductsInGithubItemsFormat() async {
     final response = await client.get(Uri.parse(libreMartApiUrl));
     if (response.statusCode == 200) {
-      final productsJson = jsonDecode(response.body);
+      final productsRepoJsonList = jsonDecode(response.body);
 
-      final List<Map<String, dynamic>> productsList =
-          List<Map<String, dynamic>>.from(productsJson);
+      final List<Map<String, dynamic>> arrangedJsonList =
+          List<Map<String, dynamic>>.from(productsRepoJsonList);
 
-      return productsList
+      return arrangedJsonList
           .map((product) => GithubItem.fromJson(product))
           .toList();
     } else {
@@ -46,15 +47,14 @@ class LMApiRepository implements ApiRepository {
   }
 
   @override
-  Future<List<Product>> getSpecificProduct({required Packing packing}) async {
-    final response = await client.get(Uri.parse('${packing.url}'));
+  Future<Product> getSpecificProduct({required Packing packing}) async {
+    final response = await client.get(Uri.parse(packing.url!));
     if (response.statusCode == 200) {
       final productJson = jsonDecode(response.body);
-      final List<Map<String, dynamic>> product =
-          List<Map<String, dynamic>>.from(productJson);
-      print(product);
-      throw UnimplementedError();
-      // return Product.fromJson(product);
+      final Map<String, dynamic> product =
+          Map<String, dynamic>.from(productJson);
+
+      return Product.fromJson(product);
     } else {
       throw UnimplementedError();
     }
