@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:auto_route/empty_router_widgets.dart';
 import 'package:libremart/core/pipe/libremart_app.dart';
 import 'package:libremart/features/browse/widgets/pages/app_page.dart';
 import 'package:libremart/features/browse/widgets/pages/browse_page.dart';
