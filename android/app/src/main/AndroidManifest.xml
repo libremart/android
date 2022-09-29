@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.libremart.android">
    <application
-        android:label="${applicationName}"
+        android:label="Libremart"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
