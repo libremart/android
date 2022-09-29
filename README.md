@@ -1,4 +1,5 @@
 <p align="center">
+<img src="https://raw.githubusercontent.com/libremart/android/devel/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" height="125" alt="mason logo" />
 <h1>LibreMart<h1/>
 </p>
 
