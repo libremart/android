@@ -6,7 +6,7 @@ part 'github_item_model.freezed.dart';
 part 'github_item_model.g.dart';
 
 @freezed
-abstract class GithubItem with _$GithubItem {
+class GithubItem with _$GithubItem {
   const factory GithubItem({
     required String? name,
     required String? path,
@@ -30,7 +30,7 @@ abstract class GithubItem with _$GithubItem {
 }
 
 @freezed
-abstract class Links with _$Links {
+class Links with _$Links {
   const factory Links({
     required String? self,
     required String? git,
