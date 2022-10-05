@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer' show log;
 
 import 'package:libremart/features/api/github_item_model/github_item_model.dart';
 import 'package:libremart/features/api/packing_model/packing_model.dart';
@@ -31,6 +32,7 @@ class LMApiRepository implements ApiRepository {
 
   @override
   Future<List<GithubItem>> getAllProductsInGithubItemsFormat() async {
+    log('Getting all products');
     final response = await client.get(Uri.parse(libreMartApiUrl));
     if (response.statusCode == 200) {
       final productsRepoJsonList = jsonDecode(response.body);
@@ -42,7 +44,8 @@ class LMApiRepository implements ApiRepository {
           .map((product) => GithubItem.fromJson(product))
           .toList();
     } else {
-      throw UnimplementedError();
+      log('Failed to fetch All products.', error: UnimplementedError());
+      return null!;
     }
   }
 

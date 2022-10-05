@@ -1,7 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:libremart/features/api/packing_model/packing_model.dart';
-import 'package:libremart/features/api/product_model/product_model.dart';
+import 'package:libremart/features/api/domain/packing_model/packing_model.dart';
+import 'package:libremart/features/api/domain/product_model/product_model.dart';
+
 part 'api_state.freezed.dart';
 
 @freezed

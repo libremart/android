@@ -7,12 +7,15 @@ class Product with _$Product {
   const Product._();
 
   const factory Product({
-    required String? id,
-    required String? published,
-    required String? updated,
+    required int? id,
+    required DateTime?
+        published, // this has been changed. change the DATA in json in the api to match the type.
+    required DateTime? updated,
     required String? product,
     required String? productName,
     required String? productPackage,
+    required String? currentVersion,
+    required int? size,
     required String? vendor,
     required String? vendorName,
     required String? iconUrl,
@@ -30,18 +33,20 @@ class Product with _$Product {
     return const Product(
       id: null,
       published: null,
-      description: null,
-      donateLink: null,
-      iconUrl: null,
-      links: null,
+      updated: null,
       product: null,
       productName: null,
       productPackage: null,
-      screenshots: null,
-      vendorName: null,
-      subtitle: null,
-      updated: null,
+      currentVersion: null,
+      size: null,
       vendor: null,
+      vendorName: null,
+      iconUrl: null,
+      subtitle: null,
+      description: null,
+      donateLink: null,
+      links: null,
+      screenshots: null,
     );
   }
 }

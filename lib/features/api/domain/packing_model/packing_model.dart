@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:libremart/features/api/github_item_model/github_item_model.dart';
+import 'package:libremart/features/api/domain/github_item_model/github_item_model.dart';
 part 'packing_model.freezed.dart';
 part 'packing_model.g.dart';
 

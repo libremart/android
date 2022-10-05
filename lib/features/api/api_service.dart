@@ -1,8 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:libremart/features/api/api_repository.dart';
-import 'package:libremart/features/api/github_item_model/github_item_model.dart';
-import 'package:libremart/features/api/packing_model/packing_model.dart';
-import 'package:libremart/features/api/product_model/product_model.dart';
+import 'package:libremart/features/api/domain/github_item_model/github_item_model.dart';
+import 'package:libremart/features/api/domain/packing_model/packing_model.dart';
+import 'package:libremart/features/api/domain/product_model/product_model.dart';
 
 final apiServiceProvider = Provider.autoDispose<ApiService>((ref) {
   return LMApiService(

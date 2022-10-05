@@ -20,12 +20,15 @@ Product _$ProductFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Product {
-  String? get id => throw _privateConstructorUsedError;
-  String? get published => throw _privateConstructorUsedError;
-  String? get updated => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
+  DateTime? get published =>
+      throw _privateConstructorUsedError; // this has been changed. change the DATA in json in the api to match the type.
+  DateTime? get updated => throw _privateConstructorUsedError;
   String? get product => throw _privateConstructorUsedError;
   String? get productName => throw _privateConstructorUsedError;
   String? get productPackage => throw _privateConstructorUsedError;
+  String? get currentVersion => throw _privateConstructorUsedError;
+  int? get size => throw _privateConstructorUsedError;
   String? get vendor => throw _privateConstructorUsedError;
   String? get vendorName => throw _privateConstructorUsedError;
   String? get iconUrl => throw _privateConstructorUsedError;
@@ -45,12 +48,14 @@ abstract class $ProductCopyWith<$Res> {
   factory $ProductCopyWith(Product value, $Res Function(Product) then) =
       _$ProductCopyWithImpl<$Res>;
   $Res call(
-      {String? id,
-      String? published,
-      String? updated,
+      {int? id,
+      DateTime? published,
+      DateTime? updated,
       String? product,
       String? productName,
       String? productPackage,
+      String? currentVersion,
+      int? size,
       String? vendor,
       String? vendorName,
       String? iconUrl,
@@ -77,6 +82,8 @@ class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
     Object? product = freezed,
     Object? productName = freezed,
     Object? productPackage = freezed,
+    Object? currentVersion = freezed,
+    Object? size = freezed,
     Object? vendor = freezed,
     Object? vendorName = freezed,
     Object? iconUrl = freezed,
@@ -90,15 +97,15 @@ class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       published: published == freezed
           ? _value.published
           : published // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as DateTime?,
       updated: updated == freezed
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as DateTime?,
       product: product == freezed
           ? _value.product
           : product // ignore: cast_nullable_to_non_nullable
@@ -111,6 +118,14 @@ class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
           ? _value.productPackage
           : productPackage // ignore: cast_nullable_to_non_nullable
               as String?,
+      currentVersion: currentVersion == freezed
+          ? _value.currentVersion
+          : currentVersion // ignore: cast_nullable_to_non_nullable
+              as String?,
+      size: size == freezed
+          ? _value.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as int?,
       vendor: vendor == freezed
           ? _value.vendor
           : vendor // ignore: cast_nullable_to_non_nullable
@@ -154,12 +169,14 @@ abstract class _$$_ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
       __$$_ProductCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String? id,
-      String? published,
-      String? updated,
+      {int? id,
+      DateTime? published,
+      DateTime? updated,
       String? product,
       String? productName,
       String? productPackage,
+      String? currentVersion,
+      int? size,
       String? vendor,
       String? vendorName,
       String? iconUrl,
@@ -187,6 +204,8 @@ class __$$_ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
     Object? product = freezed,
     Object? productName = freezed,
     Object? productPackage = freezed,
+    Object? currentVersion = freezed,
+    Object? size = freezed,
     Object? vendor = freezed,
     Object? vendorName = freezed,
     Object? iconUrl = freezed,
@@ -200,15 +219,15 @@ class __$$_ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       published: published == freezed
           ? _value.published
           : published // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as DateTime?,
       updated: updated == freezed
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as DateTime?,
       product: product == freezed
           ? _value.product
           : product // ignore: cast_nullable_to_non_nullable
@@ -221,6 +240,14 @@ class __$$_ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
           ? _value.productPackage
           : productPackage // ignore: cast_nullable_to_non_nullable
               as String?,
+      currentVersion: currentVersion == freezed
+          ? _value.currentVersion
+          : currentVersion // ignore: cast_nullable_to_non_nullable
+              as String?,
+      size: size == freezed
+          ? _value.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as int?,
       vendor: vendor == freezed
           ? _value.vendor
           : vendor // ignore: cast_nullable_to_non_nullable
@@ -267,6 +294,8 @@ class _$_Product extends _Product {
       required this.product,
       required this.productName,
       required this.productPackage,
+      required this.currentVersion,
+      required this.size,
       required this.vendor,
       required this.vendorName,
       required this.iconUrl,
@@ -283,17 +312,22 @@ class _$_Product extends _Product {
       _$$_ProductFromJson(json);
 
   @override
-  final String? id;
+  final int? id;
   @override
-  final String? published;
+  final DateTime? published;
+// this has been changed. change the DATA in json in the api to match the type.
   @override
-  final String? updated;
+  final DateTime? updated;
   @override
   final String? product;
   @override
   final String? productName;
   @override
   final String? productPackage;
+  @override
+  final String? currentVersion;
+  @override
+  final int? size;
   @override
   final String? vendor;
   @override
@@ -326,7 +360,7 @@ class _$_Product extends _Product {
 
   @override
   String toString() {
-    return 'Product(id: $id, published: $published, updated: $updated, product: $product, productName: $productName, productPackage: $productPackage, vendor: $vendor, vendorName: $vendorName, iconUrl: $iconUrl, subtitle: $subtitle, description: $description, donateLink: $donateLink, screenshots: $screenshots, links: $links)';
+    return 'Product(id: $id, published: $published, updated: $updated, product: $product, productName: $productName, productPackage: $productPackage, currentVersion: $currentVersion, size: $size, vendor: $vendor, vendorName: $vendorName, iconUrl: $iconUrl, subtitle: $subtitle, description: $description, donateLink: $donateLink, screenshots: $screenshots, links: $links)';
   }
 
   @override
@@ -342,6 +376,9 @@ class _$_Product extends _Product {
                 .equals(other.productName, productName) &&
             const DeepCollectionEquality()
                 .equals(other.productPackage, productPackage) &&
+            const DeepCollectionEquality()
+                .equals(other.currentVersion, currentVersion) &&
+            const DeepCollectionEquality().equals(other.size, size) &&
             const DeepCollectionEquality().equals(other.vendor, vendor) &&
             const DeepCollectionEquality()
                 .equals(other.vendorName, vendorName) &&
@@ -366,6 +403,8 @@ class _$_Product extends _Product {
       const DeepCollectionEquality().hash(product),
       const DeepCollectionEquality().hash(productName),
       const DeepCollectionEquality().hash(productPackage),
+      const DeepCollectionEquality().hash(currentVersion),
+      const DeepCollectionEquality().hash(size),
       const DeepCollectionEquality().hash(vendor),
       const DeepCollectionEquality().hash(vendorName),
       const DeepCollectionEquality().hash(iconUrl),
@@ -390,12 +429,14 @@ class _$_Product extends _Product {
 
 abstract class _Product extends Product {
   const factory _Product(
-      {required final String? id,
-      required final String? published,
-      required final String? updated,
+      {required final int? id,
+      required final DateTime? published,
+      required final DateTime? updated,
       required final String? product,
       required final String? productName,
       required final String? productPackage,
+      required final String? currentVersion,
+      required final int? size,
       required final String? vendor,
       required final String? vendorName,
       required final String? iconUrl,
@@ -409,17 +450,21 @@ abstract class _Product extends Product {
   factory _Product.fromJson(Map<String, dynamic> json) = _$_Product.fromJson;
 
   @override
-  String? get id;
+  int? get id;
   @override
-  String? get published;
-  @override
-  String? get updated;
+  DateTime? get published;
+  @override // this has been changed. change the DATA in json in the api to match the type.
+  DateTime? get updated;
   @override
   String? get product;
   @override
   String? get productName;
   @override
   String? get productPackage;
+  @override
+  String? get currentVersion;
+  @override
+  int? get size;
   @override
   String? get vendor;
   @override
