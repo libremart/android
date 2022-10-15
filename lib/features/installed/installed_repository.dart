@@ -2,7 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final installedRepositoryProvider = Provider<InstalledRepository>((ref) {
   //final dio = ref.watch(dioProvider);
-  return LibreMartInstalledRepository(read: ref.read);
+  return LibreMartInstalledRepository(read: ref);
 });
 
 abstract class InstalledRepository {
@@ -11,7 +11,7 @@ abstract class InstalledRepository {
 
 class LibreMartInstalledRepository implements InstalledRepository {
   LibreMartInstalledRepository({required this.read});
-  final Reader read;
+  final Ref read;
 
   // todo: implement abstract functions
 }

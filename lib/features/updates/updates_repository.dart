@@ -2,7 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final updatesRepositoryProvider = Provider<UpdatesRepository>((ref) {
   //final dio = ref.watch(dioProvider);
-  return LibreMartUpdatesRepository(read: ref.read);
+  return LibreMartUpdatesRepository(ref);
 });
 
 abstract class UpdatesRepository {
@@ -10,8 +10,8 @@ abstract class UpdatesRepository {
 }
 
 class LibreMartUpdatesRepository implements UpdatesRepository {
-  LibreMartUpdatesRepository({required this.read});
-  final Reader read;
+  LibreMartUpdatesRepository(this.ref);
+  final Ref ref;
 
   // todo: implement abstract functions
 }

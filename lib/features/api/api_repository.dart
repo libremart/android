@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:developer' show log;
 
-import 'package:libremart/features/api/github_item_model/github_item_model.dart';
-import 'package:libremart/features/api/packing_model/packing_model.dart';
-import 'package:libremart/features/api/product_model/product_model.dart';
+import 'package:libremart/features/api/domain/github_item_model/github_item_model.dart';
+import 'package:libremart/features/api/domain/packing_model/packing_model.dart';
+import 'package:libremart/features/api/domain/product_model/product_model.dart';
 import 'package:libremart/main.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
