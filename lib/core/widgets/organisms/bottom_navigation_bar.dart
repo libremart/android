@@ -1,43 +1,66 @@
-import 'package:auto_route/auto_route.dart';
-import 'package:libremart/core/shared/navigation_providers.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
+import 'package:libremart/core/widgets/atoms/nav_bar_item_atom.dart';
 import 'package:libremart/theme/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class BottomNavigationBarOrganism extends ConsumerWidget {
-  const BottomNavigationBarOrganism({Key? key, required this.tabsRouter})
-      : super(key: key);
+late int currentIndex;
+const destinations = [
+  NavBarItemAtom(
+    icon: Icon(Icons.manage_search_outlined),
+    selectedIcon: Icon(Icons.manage_search_rounded),
+    label: kStringsNavigationBrowse,
+    initialLocation: kStringsRoutesBrowse,
+  ),
+  NavBarItemAtom(
+    icon: Icon(Icons.security_update_good_outlined),
+    selectedIcon: Icon(Icons.security_update_good),
+    label: kStringsNavigationInstalled,
+    initialLocation: kStringsRoutesInstalled,
+  ),
+  NavBarItemAtom(
+    icon: Icon(Icons.system_update_outlined),
+    selectedIcon: Icon(Icons.system_update),
+    label: kStringsNavigationUpdates,
+    initialLocation: kStringsRoutesUpdates,
+  ),
+];
 
-  final TabsRouter tabsRouter;
+class BottomNavigationBarOrganism extends ConsumerStatefulWidget {
+  const BottomNavigationBarOrganism({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    var bottomNavigationIndex =
-        ref.watch(bottomNavigationChangeNotifier).selectedIndex;
+  ConsumerState<BottomNavigationBarOrganism> createState() =>
+      _BottomNavigationBarOrganismState();
+}
+
+class _BottomNavigationBarOrganismState
+    extends ConsumerState<BottomNavigationBarOrganism> {
+  @override
+  Widget build(BuildContext context) {
+    currentIndex = locationToTabIndex(GoRouter.of(context).location);
     return NavigationBarTheme(
       data: const NavigationBarThemeData(),
       child: NavigationBar(
-        labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
-        selectedIndex: tabsRouter.activeIndex,
-        onDestinationSelected: tabsRouter.setActiveIndex,
-        destinations: const [
-          NavigationDestination(
-            icon: Icon(Icons.manage_search_outlined),
-            selectedIcon: Icon(Icons.manage_search_rounded),
-            label: kStringsNavigationBrowse,
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.security_update_good_outlined),
-            selectedIcon: Icon(Icons.security_update_good),
-            label: kStringsNavigationInstalled,
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.system_update_outlined),
-            selectedIcon: Icon(Icons.system_update),
-            label: kStringsNavigationUpdates,
-          ),
-        ],
-      ),
+          labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
+          selectedIndex: currentIndex,
+          onDestinationSelected: (tabIndex) => onItemTapped(context, tabIndex),
+          destinations: destinations),
     );
+  }
+}
+
+int locationToTabIndex(String location) {
+  final index =
+      destinations.indexWhere((t) => location.startsWith(t.initialLocation));
+  // if index not found (-1), return 0
+  return index < 0 ? 0 : index;
+}
+
+// callback used to navigate to the desired tab
+void onItemTapped(BuildContext context, int tabIndex) {
+  if (tabIndex != currentIndex) {
+    // go to the initial location of the selected tab (by index)
+    context.go(destinations[tabIndex].initialLocation);
   }
 }

@@ -1,4 +1,4 @@
-import 'package:auto_route/auto_route.dart';
+import 'package:go_router/go_router.dart';
 import 'package:libremart/core/widgets/atoms/app_bar_title_atom.dart';
 import 'package:libremart/core/widgets/molecules/app_bar_actions_molecule.dart';
 import 'package:flutter/material.dart';
@@ -8,10 +8,7 @@ class LibreMartAppBarOrganism extends ConsumerStatefulWidget
     implements PreferredSizeWidget {
   const LibreMartAppBarOrganism({
     Key? key,
-    required this.tabsRouter,
   }) : super(key: key);
-
-  final TabsRouter tabsRouter;
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
@@ -26,13 +23,14 @@ class _LibreMartAppBarOrganismState
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final router = GoRouter.of(context);
 
     return AppBar(
       title: AppBarTitleAtom(
         theme: theme,
-        tabsRouter: widget.tabsRouter,
+        router: router,
       ),
-      actions: chooseActions(tabsRouter: widget.tabsRouter),
+      actions: chooseActions(router: router),
     );
   }
 }

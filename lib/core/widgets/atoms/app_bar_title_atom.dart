@@ -1,4 +1,4 @@
-import 'package:auto_route/auto_route.dart';
+import 'package:go_router/go_router.dart';
 import 'package:libremart/theme/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -7,20 +7,20 @@ class AppBarTitleAtom extends StatelessWidget {
   const AppBarTitleAtom({
     Key? key,
     required this.theme,
-    required this.tabsRouter,
+    required this.router,
   }) : super(key: key);
 
   final ThemeData theme;
-  final TabsRouter tabsRouter;
+  final GoRouter router;
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      tabsRouter.current.path == kStringsRoutesBrowse
+      router.location == kStringsRoutesBrowse
           ? kStringsNavigationBrowse
-          : tabsRouter.current.path == kStringsRoutesInstalled
+          : router.location == kStringsRoutesInstalled
               ? kStringsNavigationInstalled
-              : tabsRouter.current.path == kStringsRoutesUpdates
+              : router.location == kStringsRoutesUpdates
                   ? kStringsNavigationUpdates
                   : kAppTitle,
       style: GoogleFonts.bebasNeue(

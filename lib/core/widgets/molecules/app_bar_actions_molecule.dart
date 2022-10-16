@@ -1,4 +1,4 @@
-import 'package:auto_route/auto_route.dart';
+import 'package:go_router/go_router.dart';
 import 'package:libremart/theme/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -61,15 +61,15 @@ final List<Widget> updatesAppBarActions = [
   ),
 ];
 
-List<Widget>? chooseActions({required TabsRouter tabsRouter}) {
+List<Widget>? chooseActions({required GoRouter router}) {
   List<Widget>? appBarActions = [];
-  if (tabsRouter.current.path == kStringsRoutesBrowse) {
+  if (router.location == kStringsRoutesBrowse) {
     appBarActions = browseAppBarActions;
     return appBarActions;
-  } else if (tabsRouter.current.path == kStringsRoutesInstalled) {
+  } else if (router.location == kStringsRoutesInstalled) {
     appBarActions = installedAppBarActions;
     return appBarActions;
-  } else if (tabsRouter.current.path == kStringsRoutesUpdates) {
+  } else if (router.location == kStringsRoutesUpdates) {
     appBarActions = updatesAppBarActions;
     return appBarActions;
   }

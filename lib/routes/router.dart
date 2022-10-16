@@ -1,70 +1,47 @@
-import 'package:auto_route/auto_route.dart';
-import 'package:auto_route/empty_router_widgets.dart';
+// private navigators
+import 'package:go_router/go_router.dart';
+import 'package:flutter/material.dart';
 import 'package:libremart/core/pipe/libremart_app.dart';
-import 'package:libremart/features/browse/widgets/pages/app_page.dart';
 import 'package:libremart/features/browse/widgets/pages/browse_page.dart';
 import 'package:libremart/features/installed/widgets/pages/installed_page.dart';
 import 'package:libremart/features/updates/widgets/pages/updates_page.dart';
+import 'package:libremart/theme/constants.dart';
 
-@MaterialAutoRouter(
-  replaceInRouteName: 'Page,Route',
+final _rootNavigatorKey = GlobalKey<NavigatorState>();
+final _shellNavigatorKey = GlobalKey<NavigatorState>();
+
+// the one and only GoRouter instance
+final goRouter = GoRouter(
+  initialLocation: kStringsRoutesBrowse,
+  navigatorKey: _rootNavigatorKey,
   routes: [
-    AutoRoute(
-      path: '/',
-      page: LibreMartApp,
-      children: [
-        AutoRoute(
-          path: 'browse',
-          name: 'BrowseRouter',
-          page: EmptyRouterPage,
-          children: [
-            AutoRoute(
-              path: '',
-              page: BrowsePage,
-            ),
-            AutoRoute(
-              path: ':appId',
-              page: AppPage,
-            )
-          ],
+    ShellRoute(
+      navigatorKey: _shellNavigatorKey,
+      builder: (context, state, child) {
+        return LibreMartApp(
+          child: child,
+        );
+      },
+      routes: [
+        GoRoute(
+          path: kStringsRoutesBrowse,
+          pageBuilder: (context, state) => const NoTransitionPage(
+            child: BrowsePage(),
+          ),
         ),
-        AutoRoute(
-          path: 'installed',
-          name: 'InstalledRouter',
-          page: EmptyRouterPage,
-          children: [
-            AutoRoute(
-              path: '',
-              page: InstalledPage,
-            ),
-            // AutoRoute(
-            //   path: 'community-screen',
-            //   page: CommunityScreen,
-            // ),
-          ],
+        GoRoute(
+          path: kStringsRoutesInstalled,
+          pageBuilder: (context, state) => const NoTransitionPage(
+            child: InstalledPage(),
+          ),
         ),
-        AutoRoute(
-          path: 'updates',
-          name: 'UpdatesRouter',
-          page: EmptyRouterPage,
-          children: [
-            AutoRoute(
-              path: '',
-              page: UpdatesPage,
-            ),
-            // AutoRoute(
-            //   path: 'community-screen',
-            //   page: CommunityScreen,
-            // ),
-          ],
+        GoRoute(
+          path: kStringsRoutesUpdates,
+          pageBuilder: (context, state) => const NoTransitionPage(
+            child: UpdatesPage(),
+          ),
         ),
       ],
     ),
-    // AutoRoute(
-    //   path: 'new-post',
-    //   name: 'NewPostRouter',
-    //   page: NewPostScreen,
-    // ),
   ],
-)
-class $AppRouter {}
+);

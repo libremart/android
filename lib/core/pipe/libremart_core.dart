@@ -1,6 +1,7 @@
+import 'package:go_router/go_router.dart';
 import 'package:libremart/theme/color_schemes.dart';
 import 'package:dynamic_color/dynamic_color.dart';
-import 'package:libremart/routes/router.gr.dart';
+
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:libremart/theme/libremart_theme.dart';
@@ -8,10 +9,10 @@ import 'package:libremart/theme/libremart_theme.dart';
 class LibremartCore extends StatelessWidget {
   const LibremartCore({
     Key? key,
-    required this.appRouter,
+    required this.router,
   }) : super(key: key);
 
-  final AppRouter appRouter;
+  final GoRouter router;
 
   @override
   Widget build(BuildContext context) {
@@ -40,8 +41,9 @@ class LibremartCore extends StatelessWidget {
               darkTheme: LibreMartTheme.dark(),
               themeMode: ThemeMode.system, //! implement override theme switcher
               debugShowCheckedModeBanner: false,
-              routerDelegate: appRouter.delegate(),
-              routeInformationParser: appRouter.defaultRouteParser(),
+              routerDelegate: router.routerDelegate,
+              routeInformationParser: router.routeInformationParser,
+              routeInformationProvider: router.routeInformationProvider,
             );
           },
         );

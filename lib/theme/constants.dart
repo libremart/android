@@ -19,9 +19,9 @@ const String kStringsAppDetailSize = 'Size';
 const String kStringsAppDownload = 'Download';
 
 //* Routes:
-const String kStringsRoutesBrowse = 'browse';
-const String kStringsRoutesInstalled = 'installed';
-const String kStringsRoutesUpdates = 'updates';
+const String kStringsRoutesBrowse = '/browse';
+const String kStringsRoutesInstalled = '/installed';
+const String kStringsRoutesUpdates = '/updates';
 
 const String kStringsMessagesSometingWentWrong = 'Something Went Wrong.';
 const String kStringsMessagesRetry = 'Retry';

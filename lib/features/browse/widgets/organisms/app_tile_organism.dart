@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:libremart/features/api/api_controller.dart';
-import 'package:libremart/routes/router.gr.dart';
-import 'package:auto_route/auto_route.dart';
 import 'package:libremart/features/browse/widgets/atoms/tile_subtitle_atom.dart';
 import 'package:libremart/features/browse/widgets/atoms/tile_title_atom.dart';
 
@@ -18,7 +16,7 @@ class AppTileOrganism extends ConsumerWidget {
     return Card(
       child: ListTile(
         onTap: () {
-          context.router.push(const AppRoute());
+          //! context.router.push(const AppRoute());
 
           ref
               .read(apiControllerProvider.notifier)
