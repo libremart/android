@@ -1,7 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:libremart/theme/color_schemes.dart';
 import 'package:dynamic_color/dynamic_color.dart';
-
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:libremart/theme/libremart_theme.dart';
@@ -33,17 +33,19 @@ class LibremartCore extends StatelessWidget {
             }
 
             return MaterialApp.router(
-              theme: ThemeData(
-                useMaterial3: true,
-                colorScheme: lightColorSchemeA,
-              ),
-              //  LibremartTheme.light(),
-              darkTheme: LibreMartTheme.dark(),
-              themeMode: ThemeMode.system, //! implement override theme switcher
+              supportedLocales: context.supportedLocales,
+              localizationsDelegates: context.localizationDelegates,
+              locale: context.locale,
               debugShowCheckedModeBanner: false,
               routerDelegate: router.routerDelegate,
               routeInformationParser: router.routeInformationParser,
               routeInformationProvider: router.routeInformationProvider,
+              theme: ThemeData(
+                useMaterial3: true,
+                colorScheme: lightColorSchemeA,
+              ),
+              darkTheme: LibreMartTheme.dark(),
+              themeMode: ThemeMode.system, //! implement override theme switcher
             );
           },
         );

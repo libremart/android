@@ -1,0 +1,8 @@
+{
+  "title_browse": "Browse",
+  "title_installed": "Install",
+  "title_updates": "Updates",
+  "field_currentversion_name": "Current Version",
+  "field_currentversion_hint": "1.0.3",
+  "field_published_name": "Published"
+}

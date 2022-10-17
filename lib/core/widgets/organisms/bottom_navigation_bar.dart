@@ -3,25 +3,27 @@ import 'package:go_router/go_router.dart';
 import 'package:libremart/core/widgets/atoms/nav_bar_item_atom.dart';
 import 'package:libremart/theme/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:libremart/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 late int currentIndex;
-const destinations = [
+final destinations = [
   NavBarItemAtom(
-    icon: Icon(Icons.manage_search_outlined),
-    selectedIcon: Icon(Icons.manage_search_rounded),
-    label: kStringsNavigationBrowse,
+    icon: const Icon(Icons.manage_search_outlined),
+    selectedIcon: const Icon(Icons.manage_search_rounded),
+    label: LocaleKeys.title_browse.tr(),
     initialLocation: kStringsRoutesBrowse,
   ),
   NavBarItemAtom(
-    icon: Icon(Icons.security_update_good_outlined),
-    selectedIcon: Icon(Icons.security_update_good),
-    label: kStringsNavigationInstalled,
+    icon: const Icon(Icons.security_update_good_outlined),
+    selectedIcon: const Icon(Icons.security_update_good),
+    label: LocaleKeys.title_installed.tr(),
     initialLocation: kStringsRoutesInstalled,
   ),
   NavBarItemAtom(
-    icon: Icon(Icons.system_update_outlined),
-    selectedIcon: Icon(Icons.system_update),
-    label: kStringsNavigationUpdates,
+    icon: const Icon(Icons.system_update_outlined),
+    selectedIcon: const Icon(Icons.system_update),
+    label: LocaleKeys.title_updates.tr(),
     initialLocation: kStringsRoutesUpdates,
   ),
 ];
@@ -42,7 +44,7 @@ class _BottomNavigationBarOrganismState
     return NavigationBarTheme(
       data: const NavigationBarThemeData(),
       child: NavigationBar(
-          labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
+          // labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
           selectedIndex: currentIndex,
           onDestinationSelected: (tabIndex) => onItemTapped(context, tabIndex),
           destinations: destinations),
